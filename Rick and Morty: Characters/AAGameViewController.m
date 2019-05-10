@@ -155,7 +155,7 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 
 - (void)getNewQuestion
 {
-    NSDateComponents *dateComponents = [self takeDateComponents];
+    NSDateComponents *dateComponents = [self getDateComponents];
     
     NSInteger hour = [dateComponents hour] + 1;
     NSInteger minute = [dateComponents minute] + 1;
@@ -179,7 +179,7 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 }
 
 
-- (NSDateComponents *)takeDateComponents
+- (NSDateComponents *)getDateComponents
 {
     NSDate *currentDate = [NSDate date];
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -205,7 +205,7 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
         self.arrayPictures[indexItem].image = [UIImage imageWithData:[self.networkService downloadCharacterImage:item[@"image"]]];
         indexItem++;
     }
-    NSDateComponents *dateComponents = [self takeDateComponents];
+    NSDateComponents *dateComponents = [self getDateComponents];
     NSInteger indexSearchPicture = [dateComponents second] % 3;
     self.questionLabel.text = self.arrayPictures[indexSearchPicture].characterName;
     [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

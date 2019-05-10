@@ -38,9 +38,9 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
     self = [super init];
     if (self)
     {
-        self.networkService = [AANetworkService new];
-        self.networkService.output = self;
-        self.pageNumber = 1;
+        _networkService = [AANetworkService new];
+        _networkService.output = self;
+        _pageNumber = 1;
     }
     return self;
 }

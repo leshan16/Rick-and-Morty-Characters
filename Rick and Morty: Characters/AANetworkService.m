@@ -7,6 +7,7 @@
 //
 
 #import "AANetworkService.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 
 @interface AANetworkService ()
@@ -21,8 +22,8 @@
 - (void)makeNewRequest:(NSString *)urlString
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString: urlString]];
-    [request setTimeoutInterval:10];
+    request.URL = [NSURL URLWithString: urlString];
+    request.timeoutInterval = 10;
     
     if (!self.urlSession)
     {
@@ -51,6 +52,10 @@
 
 - (void)downloadCharactersInfoForGame:(NSArray<NSNumber *> *)arraySearchID
 {
+    if (arraySearchID.count < 4)
+    {
+        return;
+    }
     NSString *urlString = [NSString stringWithFormat:@"https://rickandmortyapi.com/api/character/%@,%@,%@,%@",
                            arraySearchID[0], arraySearchID[1], arraySearchID[2], arraySearchID[3]];
     [self makeNewRequest:urlString];
@@ -67,9 +72,9 @@
 {
     NSString *urlString = @"https://www.google.com/";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString: urlString]];
-    [request setTimeoutInterval:5];
-    [request setHTTPMethod:@"HEAD"];
+    request.URL = [NSURL URLWithString: urlString];
+    request.timeoutInterval = 5;
+    request.HTTPMethod = @"HEAD";
     
     if (!self.urlSession)
     {
