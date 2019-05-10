@@ -8,6 +8,9 @@
 
 #import "AANetworkService.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+#import <sys/types.h>
+#import <netinet/in.h>
+
 
 
 @interface AANetworkService ()
@@ -68,30 +71,28 @@
 }
 
 
-- (void)checkInternetConnection
+- (BOOL)checkInternetConnection
 {
-    NSString *urlString = @"https://www.google.com/";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    request.URL = [NSURL URLWithString: urlString];
-    request.timeoutInterval = 5;
-    request.HTTPMethod = @"HEAD";
+    struct sockaddr_in zeroAddress;
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    zeroAddress.sin_len = sizeof(zeroAddress);
+    zeroAddress.sin_family = AF_INET;
     
-    if (!self.urlSession)
+    SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)
+                                                                                               &zeroAddress);
+    SCNetworkReachabilityFlags flags;
+    BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+    CFRelease(defaultRouteReachability);
+    if (!didRetrieveFlags)
     {
-        self.urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        NSLog(@"Error. Could not recover network reachability flags");
+        return NO;
     }
-    NSURLSessionDataTask *sessionDataTask = [self.urlSession dataTaskWithRequest:request
-                                                               completionHandler:^(NSData * _Nullable data,
-                                                                                   NSURLResponse * _Nullable response,
-                                                                                   NSError * _Nullable error) {
-        if ([self.output respondsToSelector:@selector(getCharactersInfoFromCoreData:)])
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.output getCharactersInfoFromCoreData:(data == nil) ? NO : YES];
-            });
-        }
-    }];
-    [sessionDataTask resume];
+    BOOL isReachable = flags & kSCNetworkFlagsReachable;
+    BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
+    BOOL nonWiFi = flags & kSCNetworkReachabilityFlagsTransientConnection;
+    
+    return ((isReachable && !needsConnection) || nonWiFi);
 }
 
 @end

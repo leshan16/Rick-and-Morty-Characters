@@ -18,15 +18,6 @@
  */
 - (void)downloadNewPage:(NSData *)charactersInfo;
 
-@optional
-
-/**
- Метод извлекает данные из кор даты, и дополняет их данными из сети
-
- @param isInternetConnection Текущее состояние интернет соединения
- */
-- (void)getCharactersInfoFromCoreData:(BOOL)isInternetConnection;
-
 @end
 
 
@@ -57,10 +48,13 @@
  */
 - (NSData *)downloadCharacterImage:(NSString *)urlStringImage;
 
+
 /**
  Метод проверяет текущее состояние интернет соединения
+
+ @return Cостояние интернет соединения
  */
-- (void)checkInternetConnection;
+- (BOOL)checkInternetConnection;
 
 @end
 

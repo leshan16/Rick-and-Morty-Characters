@@ -26,7 +26,6 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
 @property (nonatomic, assign) NSInteger pageNumber;
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
-@property (nonatomic, copy) NSArray<AACharacter *> *arrayCharactersFromCoreData;
 
 @end
 
@@ -46,19 +45,64 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
 }
 
 
+#pragma mark - AADataServiceInputProtocol
+
 - (void)getCharactersInfo
 {
     NSError *error = nil;
-    self.arrayCharactersFromCoreData = [self.coreDataContext executeFetchRequest:self.fetchRequest ? :
+    NSArray<AACharacter *> *arrayCharactersFromCoreData = [self.coreDataContext executeFetchRequest:self.fetchRequest ? :
                                         [AACharacter fetchRequest] error:&error];
-    if (self.arrayCharactersFromCoreData.count == 0)
+    if (arrayCharactersFromCoreData.count == 0)
     {
         [self.networkService downloadCharactersInfo:self.pageNumber];
     }
     else
     {
-        [self.networkService checkInternetConnection];
+        [self getCharactersInfoFromCoreData:arrayCharactersFromCoreData];
     }
+}
+
+
+- (void)getCharactersInfoFromCoreData:(NSArray<AACharacter *> *)arrayCharactersFromCoreData
+{
+    BOOL isInternetConnection = [self.networkService checkInternetConnection];
+    if (!isInternetConnection)
+    {
+        [self.output showAlert:@"No internet connection"];
+    }
+    dispatch_queue_t concurrentQueueForDownloadImages = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t groupForDownloadImages = dispatch_group_create();
+    NSMutableArray<AACharacterModel *> *resultArrayInfo = [NSMutableArray new];
+    
+    for (AACharacter *character in arrayCharactersFromCoreData)
+    {
+        AACharacterModel *newCharacter = [AACharacterModel new];
+        newCharacter.name = character.name;
+        newCharacter.status = character.status;
+        newCharacter.species = character.species;
+        newCharacter.type = character.type;
+        newCharacter.gender = character.gender;
+        newCharacter.origin = character.origin;
+        newCharacter.location = character.location;
+        newCharacter.imageUrlString = character.imageUrlString;
+        newCharacter.identifier = character.identifier;
+        dispatch_group_async(groupForDownloadImages, concurrentQueueForDownloadImages, ^{
+            if (isInternetConnection)
+            {
+                newCharacter.image = [UIImage imageWithData:[self.networkService
+                                                             downloadCharacterImage:character.imageUrlString]];
+            }
+            else
+            {
+                newCharacter.image = nil;
+            }
+        });
+        [resultArrayInfo addObject:newCharacter];
+    }
+    dispatch_group_notify(groupForDownloadImages, dispatch_get_main_queue(), ^{
+        self.pageNumber++;
+        [self.output addNewPage:resultArrayInfo];
+    });
 }
 
 
@@ -91,48 +135,6 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
         [newCharacter.managedObjectContext save:&error];
     }
     [self getCharactersInfo];
-}
-
-
-- (void)getCharactersInfoFromCoreData:(BOOL)isInternetConnection
-{
-    if (!isInternetConnection)
-    {
-        [self.output showAlert:@"No internet connection"];
-    }
-    dispatch_queue_t concurrentQueueForDownloadImages = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_group_t groupForDownloadImages = dispatch_group_create();
-    NSMutableArray<AACharacterModel *> *resultArrayInfo = [NSMutableArray new];
-    
-    for (AACharacter *character in self.arrayCharactersFromCoreData)
-    {
-        AACharacterModel *newCharacter = [AACharacterModel new];
-        newCharacter.name = character.name;
-        newCharacter.status = character.status;
-        newCharacter.species = character.species;
-        newCharacter.type = character.type;
-        newCharacter.gender = character.gender;
-        newCharacter.origin = character.origin;
-        newCharacter.location = character.location;
-        newCharacter.imageUrlString = character.imageUrlString;
-        newCharacter.identifier = character.identifier;
-        dispatch_group_async(groupForDownloadImages, concurrentQueueForDownloadImages, ^{
-            if (isInternetConnection)
-            {
-                newCharacter.image = [UIImage imageWithData:[self.networkService
-                                                             downloadCharacterImage:character.imageUrlString]];
-            }
-            else
-            {
-                newCharacter.image = nil;
-            }
-        });
-        [resultArrayInfo addObject:newCharacter];
-    }
-    dispatch_group_notify(groupForDownloadImages, dispatch_get_main_queue(), ^{
-        self.pageNumber++;
-        [self.output addNewPage:resultArrayInfo];
-    });
 }
 
 
