@@ -105,28 +105,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-getNewQuestion"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AANetworkService.m"
-            timestampString = "578945093.969178"
+            timestampString = "579192957.179567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-downloadCharactersInfo:"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-downloadNewPage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-downloadNewPage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-downloadNewPage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-downloadNewPage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AAGameViewController.m"
-            timestampString = "578789979.505687"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-downloadNewPage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            timestampString = "579195343.641028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "@implementation AADataService"
             landmarkType = "3">
          </BreakpointContent>
@@ -250,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            timestampString = "579195343.641028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-fetchRequest"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            timestampString = "579195343.641028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -282,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            timestampString = "579195343.641028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "-getCharactersInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            timestampString = "579195343.641028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "-getCharactersInfo"
             landmarkType = "7">
          </BreakpointContent>
@@ -329,13 +313,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            filePath = "Rick and Morty: Characters/AAGameViewController.m"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-getCharactersInfoFromCoreData:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-getNewQuestion"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,13 +329,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rick and Morty: Characters/AADataService.m"
-            timestampString = "578786028.319842"
+            filePath = "Rick and Morty: Characters/AAGameViewController.m"
+            timestampString = "579184364.631899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-getCharactersInfoFromCoreData:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-downloadNewPage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rick and Morty: Characters/AANetworkService.m"
+            timestampString = "579192957.179567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-downloadCharactersInfoForGame:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
