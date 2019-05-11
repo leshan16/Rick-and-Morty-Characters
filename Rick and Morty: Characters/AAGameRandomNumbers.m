@@ -17,14 +17,14 @@
 }
 
 
-+ (NSArray<NSNumber *> *)getRandomFourNumbersFrom0toX:(NSInteger)extremeNumber
++ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493
 {
     NSDateComponents *dateComponents = [self getDateComponents];
     
     NSInteger hour = [dateComponents hour] + 1;
     NSInteger minute = [dateComponents minute] + 1;
     NSInteger second = [dateComponents second] + 1;
-    NSInteger searchID = (second * minute * hour) % extremeNumber + 1;
+    NSInteger searchID = (second * minute * hour) % 493 + 1;
     
     NSMutableArray *arraySearchIDCharacters = [NSMutableArray new];
     [arraySearchIDCharacters addObject:@(searchID)];
@@ -32,7 +32,7 @@
     for (int i = 1; i < 4; i++)
     {
         NSInteger nextID = searchID + second * i;
-        if (nextID > extremeNumber)
+        if (nextID > 493)
         {
             nextID = searchID - second * i;
         }

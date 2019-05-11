@@ -25,9 +25,8 @@
 /**
  Метод создает 4 случайных числа от 0 до extremeNumber
 
- @param extremeNumber Правая граница интервала случайных чисел
- @return Массив из 4 случайных чисел от 0 до extremeNumber
+ @return Массив из 4 случайных чисел от 0 до 493(общего числа персонажей)
  */
-+ (NSArray<NSNumber *> *)getRandomFourNumbersFrom0toX:(NSInteger)extremeNumber;
++ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493;
 
 @end
