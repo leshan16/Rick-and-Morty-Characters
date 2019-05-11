@@ -11,8 +11,6 @@
 #import "AAGameRandomNumbers.h"
 #import "AAGameRootView.h"
 
-static const NSInteger AANumberOfCharactersInTotal = 493;
-
 
 @interface AAGameViewController () <AANetworkServiceOutputProtocol, AAGamePictureProtocol>
 
@@ -60,7 +58,7 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 
 - (void)getNewQuestion
 {
-    NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom0toX:AANumberOfCharactersInTotal];
+    NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom1to493];
     [self.rootView.activityIndicator startAnimating];
     [self.networkService downloadCharactersInfoForGame:arraySearchID];
 }

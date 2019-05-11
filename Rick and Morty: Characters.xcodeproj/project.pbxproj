@@ -26,7 +26,7 @@
 		CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBB5683E2270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld */; };
 		CBB568422270C71600FF5031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB568412270C71600FF5031 /* Assets.xcassets */; };
 		CBB568452270C71600FF5031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB568432270C71600FF5031 /* LaunchScreen.storyboard */; };
-		CBB568502270C71600FF5031 /* Rick_and_Morty__CharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5684F2270C71600FF5031 /* Rick_and_Morty__CharactersTests.m */; };
+		CBB568502270C71600FF5031 /* AAGameRandomNumbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */; };
 		CBB5685B2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5685A2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m */; };
 		CBB5686A2270F2B100FF5031 /* AADatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568692270F2B100FF5031 /* AADatabaseViewController.m */; };
 		CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5686F2270F2E000FF5031 /* AAGameViewController.m */; };
@@ -93,7 +93,7 @@
 		CBB568442270C71600FF5031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBB568462270C71600FF5031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB5684B2270C71600FF5031 /* Rick and Morty: CharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick and Morty: CharactersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBB5684F2270C71600FF5031 /* Rick_and_Morty__CharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rick_and_Morty__CharactersTests.m; sourceTree = "<group>"; };
+		CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAGameRandomNumbersTests.m; sourceTree = "<group>"; };
 		CBB568512270C71600FF5031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB568562270C71600FF5031 /* Rick and Morty: CharactersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick and Morty: CharactersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB5685A2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rick_and_Morty__CharactersUITests.m; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 		CBB5684E2270C71600FF5031 /* Rick and Morty: CharactersTests */ = {
 			isa = PBXGroup;
 			children = (
-				CBB5684F2270C71600FF5031 /* Rick_and_Morty__CharactersTests.m */,
+				CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */,
 				CBB568512270C71600FF5031 /* Info.plist */,
 			);
 			path = "Rick and Morty: CharactersTests";
@@ -586,7 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB568502270C71600FF5031 /* Rick_and_Morty__CharactersTests.m in Sources */,
+				CBB568502270C71600FF5031 /* AAGameRandomNumbersTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
