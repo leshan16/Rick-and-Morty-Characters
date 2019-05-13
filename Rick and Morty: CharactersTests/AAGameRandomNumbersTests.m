@@ -27,7 +27,7 @@
 
 - (void)testRandomNumberFrom0to3
 {
-    NSInteger result = [AAGameRandomNumbers getRandomNumberFrom0to3];
+    NSInteger result = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
     XCTAssertGreaterThanOrEqual(result, 0);
     XCTAssertLessThanOrEqual(result, 3);
 }
@@ -35,7 +35,7 @@
 
 - (void)testRandomFourNumbersFrom1to493
 {
-    NSArray<NSNumber *> *result = [AAGameRandomNumbers getRandomFourNumbersFrom1to493];
+    NSArray<NSNumber *> *result = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:[NSDate date]];
     XCTAssertEqual(result.count, 4);
     for (NSNumber *searchID in result)
     {

@@ -14,23 +14,17 @@
 #import "AAActivityIndicatorView.h"
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
 /**
  Контейнер для UI элементов, управляемых AAGameViewController
  */
 @interface AAGameRootView : UIView <AAGameRootViewProtocol>
 
 @property (nonatomic, nullable, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
-@property (nonatomic, strong) AAGameScoreLabel *scoreLabel; /**< Поле счета игрока */
-@property (nonatomic, strong) AAGameScoreLabel *bestScoreLabel; /**< Поле лучшего счета игрока за все время */
-@property (nonatomic, copy) NSArray<AAGamePicture *> *arrayPictures; /**< Массив четырех картинок персонажей */
-@property (nonatomic, strong) AAGameQuestionLabel *questionLabel; /**< Поле с именем угадываемого персонажа */
-@property (nonatomic, strong) AAActivityIndicatorView *activityIndicator; /**< Индикатор активности для отображения
+@property (nonatomic, nullable, strong) AAGameScoreLabel *scoreLabel; /**< Поле счета игрока */
+@property (nonatomic, nullable, strong) AAGameScoreLabel *bestScoreLabel; /**< Поле лучшего счета игрока за все время */
+@property (nonatomic, nullable, copy) NSArray<AAGamePicture *> *arrayPictures; /**< Массив четырех картинок персонажей */
+@property (nonatomic, nullable, strong) AAGameQuestionLabel *questionLabel; /**< Поле с именем угадываемого персонажа */
+@property (nonatomic, nullable, strong) AAActivityIndicatorView *activityIndicator; /**< Индикатор активности для отображения
                                                                            статуса получения данных из сети */
 
 @end
-
-
-NS_ASSUME_NONNULL_END

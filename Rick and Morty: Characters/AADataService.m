@@ -20,21 +20,15 @@
 static const NSInteger AANumberOfCharactersInsidePage = 20;
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
 @interface AADataService() <AANetworkServiceOutputProtocol>
 
-@property (nonatomic, strong) AANetworkService *networkService;
+@property (nonatomic, nonnull, strong) AANetworkService *networkService;
 @property (nonatomic, assign) NSInteger pageNumber;
-@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
-@property (nonatomic, strong) NSFetchRequest *fetchRequest;
+@property (nonatomic, nullable, strong) NSManagedObjectContext *coreDataContext;
+@property (nonatomic, nullable, strong) NSFetchRequest *fetchRequest;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 @end
-
-
-NS_ASSUME_NONNULL_END
 
 
 @implementation AADataService

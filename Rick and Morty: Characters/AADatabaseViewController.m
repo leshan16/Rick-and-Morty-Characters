@@ -19,21 +19,15 @@ static const CGFloat AACellSpacing = 1.0;
 static const NSInteger AANumberOfCharactersInTotal = 493;
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
 @interface AADatabaseViewController () <AADataServiceOutputProtocol, UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, strong) AADatabaseTitleLabel *titleLabel;
-@property (nonatomic, strong) AADatabaseCollectionView *collectionView;
-@property (nonatomic, strong) AADataService *dataService;
-@property (nonatomic, strong) AAActivityIndicatorView *activityIndicator;
-@property (nonatomic, strong) NSMutableArray<AACharacterModel *> *arrayCharacters;
+@property (nonatomic, nullable, strong) AADatabaseTitleLabel *titleLabel;
+@property (nonatomic, nullable, strong) AADatabaseCollectionView *collectionView;
+@property (nonatomic, nullable, strong) AADataService *dataService;
+@property (nonatomic, nullable, strong) AAActivityIndicatorView *activityIndicator;
+@property (nonatomic, nullable, strong) NSMutableArray<AACharacterModel *> *arrayCharacters;
 
 @end
-
-
-NS_ASSUME_NONNULL_END
 
 
 @implementation AADatabaseViewController

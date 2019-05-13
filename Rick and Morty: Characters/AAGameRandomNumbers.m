@@ -11,15 +11,15 @@
 
 @implementation AAGameRandomNumbers
 
-+ (NSInteger)getRandomNumberFrom0to3
++ (NSInteger)getRandomNumberFrom0to3:(NSDate *)currentDate
 {
-    return [[self getDateComponents] second] % 3;
+    return [[self getDateComponents:currentDate] second] % 3;
 }
 
 
-+ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493
++ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493:(NSDate *)currentDate
 {
-    NSDateComponents *dateComponents = [self getDateComponents];
+    NSDateComponents *dateComponents = [self getDateComponents:currentDate];
     
     NSInteger hour = [dateComponents hour] + 1;
     NSInteger minute = [dateComponents minute] + 1;
@@ -42,9 +42,8 @@
 }
 
 
-+ (NSDateComponents *)getDateComponents
++ (NSDateComponents *)getDateComponents:(nullable NSDate *)currentDate
 {
-    NSDate *currentDate = [NSDate date];
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [gregorian components:(NSCalendarUnitHour  | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:currentDate];
 }

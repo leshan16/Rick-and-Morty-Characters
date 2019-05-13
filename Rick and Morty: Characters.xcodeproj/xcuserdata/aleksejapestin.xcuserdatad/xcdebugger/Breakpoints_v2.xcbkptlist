@@ -367,7 +367,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "+getRandomFourNumbersFrom1to493"
+            landmarkName = "+getRandomFourNumbersFrom1to493:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -383,7 +383,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "+getRandomFourNumbersFrom1to493"
+            landmarkName = "+getRandomFourNumbersFrom1to493:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

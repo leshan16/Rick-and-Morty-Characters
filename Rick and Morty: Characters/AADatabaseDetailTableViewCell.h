@@ -9,18 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
 /**
  Кастомная ячейка таблицы, содержащяя в себе наименование и значение характеристики персонажа
  */
 @interface AADatabaseDetailTableViewCell : UITableViewCell
 
-@property(nonatomic, strong) UILabel *leftLabel; /**< Наименование характеристики персонажа */
-@property(nonatomic, strong) UILabel *rightLabel; /**< Значение характеристики персонажа */
+@property(nonatomic, nullable, strong) UILabel *leftLabel; /**< Наименование характеристики персонажа */
+@property(nonatomic, nullable, strong) UILabel *rightLabel; /**< Значение характеристики персонажа */
 
 @end
-
-
-NS_ASSUME_NONNULL_END

@@ -14,9 +14,9 @@
 
 @interface AAGameViewController () <AANetworkServiceOutputProtocol, AAGamePictureProtocol>
 
-@property (nonatomic, nonnull, strong) AAGameRootView *rootView;
+@property (nonatomic, nullable, strong) AAGameRootView *rootView;
 @property (nonatomic, assign) NSInteger score;
-@property (nonatomic, nonnull, strong) AANetworkService *networkService;
+@property (nonatomic, nullable, strong) AANetworkService *networkService;
 
 @end
 
@@ -58,7 +58,7 @@
 
 - (void)getNewQuestion
 {
-    NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom1to493];
+    NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:[NSDate date]];
     [self.rootView.activityIndicator startAnimating];
     [self.networkService downloadCharactersInfoForGame:arraySearchID];
 }
@@ -82,7 +82,7 @@
         self.rootView.arrayPictures[indexItem].image = [UIImage imageWithData:[self.networkService downloadCharacterImage:item[@"image"]]];
         indexItem++;
     }
-    NSInteger indexSearchPicture = [AAGameRandomNumbers getRandomNumberFrom0to3];
+    NSInteger indexSearchPicture = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
     self.rootView.questionLabel.text = self.rootView.arrayPictures[indexSearchPicture].characterName;
     [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self.rootView installFinishFrame];

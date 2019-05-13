@@ -14,6 +14,6 @@
  */
 @interface AADatabaseCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, nonnull, strong) UIImageView *coverImageView; /**< Контейнер для картинки персонажа */
+@property (nonatomic, nullable, strong) UIImageView *coverImageView; /**< Контейнер для картинки персонажа */
 
 @end
