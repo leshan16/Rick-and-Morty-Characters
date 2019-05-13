@@ -15,7 +15,7 @@
 
 @interface AANetworkService ()
 
-@property (nonatomic, strong) NSURLSession *urlSession;
+@property (nonatomic, nonnull, strong) NSURLSession *urlSession;
 
 @end
 

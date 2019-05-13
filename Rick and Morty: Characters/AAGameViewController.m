@@ -14,9 +14,9 @@
 
 @interface AAGameViewController () <AANetworkServiceOutputProtocol, AAGamePictureProtocol>
 
-@property (nonatomic, strong) AAGameRootView *rootView;
+@property (nonatomic, nonnull, strong) AAGameRootView *rootView;
 @property (nonatomic, assign) NSInteger score;
-@property (nonatomic, strong) AANetworkService *networkService;
+@property (nonatomic, nonnull, strong) AANetworkService *networkService;
 
 @end
 

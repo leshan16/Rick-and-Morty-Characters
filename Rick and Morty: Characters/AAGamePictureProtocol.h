@@ -19,6 +19,6 @@
 
  @param picture Экземпляр картинки, на которую нажали
  */
-- (void)pictureSelected:(AAGamePicture *)picture;
+- (void)pictureSelected:(nullable AAGamePicture *)picture;
 
 @end

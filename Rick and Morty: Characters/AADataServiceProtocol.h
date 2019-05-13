@@ -19,14 +19,14 @@
 
  @param textAlert Текст предупреждения
  */
-- (void)showAlert:(NSString *)textAlert;
+- (void)showAlert:(nullable NSString *)textAlert;
 
 /**
  Метод обновленяет UI новыми персонажами
 
  @param charactersInfo Массив новых персонажей
  */
-- (void)addNewPage:(NSMutableArray<AACharacterModel *> *)charactersInfo;
+- (void)addNewPage:(nullable NSMutableArray<AACharacterModel *> *)charactersInfo;
 
 @end
 

@@ -21,7 +21,6 @@
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
 		CBB568342270C71500FF5031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568332270C71500FF5031 /* main.m */; };
 		CBB568372270C71500FF5031 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568362270C71500FF5031 /* AppDelegate.m */; };
-		CBB5683A2270C71500FF5031 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568392270C71500FF5031 /* ViewController.m */; };
 		CBB5683D2270C71600FF5031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5683B2270C71600FF5031 /* Main.storyboard */; };
 		CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBB5683E2270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld */; };
 		CBB568422270C71600FF5031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB568412270C71600FF5031 /* Assets.xcassets */; };
@@ -85,8 +84,6 @@
 		CBB568332270C71500FF5031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBB568352270C71500FF5031 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBB568362270C71500FF5031 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBB568382270C71500FF5031 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CBB568392270C71500FF5031 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CBB5683C2270C71600FF5031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBB5683F2270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rick_and_Morty__Characters.xcdatamodel; sourceTree = "<group>"; };
 		CBB568412270C71600FF5031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,8 +293,6 @@
 				CBD555682275D6EA00482512 /* DatabaseTabBar */,
 				CBB568352270C71500FF5031 /* AppDelegate.h */,
 				CBB568362270C71500FF5031 /* AppDelegate.m */,
-				CBB568382270C71500FF5031 /* ViewController.h */,
-				CBB568392270C71500FF5031 /* ViewController.m */,
 				CBB5683B2270C71600FF5031 /* Main.storyboard */,
 				CBB568412270C71600FF5031 /* Assets.xcassets */,
 				CBB568432270C71600FF5031 /* LaunchScreen.storyboard */,
@@ -561,7 +556,6 @@
 				CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */,
 				CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */,
 				CB18CD2C227DA7B400F92C2F /* AAActivityIndicatorView.m in Sources */,
-				CBB5683A2270C71500FF5031 /* ViewController.m in Sources */,
 				CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */,
 				CB249B722277406A00C2C84B /* AAGameScoreLabel.m in Sources */,
 				CB249B692276F01100C2C84B /* AADatabaseDetailTableView.m in Sources */,

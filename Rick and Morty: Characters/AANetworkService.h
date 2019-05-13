@@ -15,6 +15,6 @@
  */
 @interface AANetworkService : NSObject <AANetworkServiceIntputProtocol>
 
-@property (nonatomic, weak) id<AANetworkServiceOutputProtocol> output; /**< Делегат внешних событий */
+@property (nonatomic, nullable, weak) id<AANetworkServiceOutputProtocol> output; /**< Делегат внешних событий */
 
 @end
