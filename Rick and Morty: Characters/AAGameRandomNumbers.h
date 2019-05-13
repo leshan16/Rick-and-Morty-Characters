@@ -19,7 +19,7 @@
 
  @return Случайное число от 0 до 3
  */
-+ (NSInteger)getRandomNumberFrom0to3;
++ (NSInteger)getRandomNumberFrom0to3:(nullable NSDate *)currentDate;
 
 
 /**
@@ -27,6 +27,6 @@
 
  @return Массив из 4 случайных чисел от 0 до 493(общего числа персонажей)
  */
-+ (nonnull NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493;
++ (nonnull NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493:(nullable NSDate *)currentDate;
 
 @end

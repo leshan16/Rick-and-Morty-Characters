@@ -16,20 +16,14 @@ static const CGFloat AANavigationItemHeight = 65.0;
 static const CGFloat AATabBarItemHeight = 50.0;
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-
 @interface AADatabaseDetailViewController () <UITableViewDataSource>
 
-@property(nonatomic, strong) UIImageView *imageView;
-@property(nonatomic, strong) AADatabaseTitleLabel *titleLabel;
-@property(nonatomic, strong) AADatabaseDetailTableView *tableView;
-@property(nonatomic, strong) NSMutableArray<NSArray *> *arrayFeatures;
+@property(nonatomic, nullable, strong) UIImageView *imageView;
+@property(nonatomic, nullable, strong) AADatabaseTitleLabel *titleLabel;
+@property(nonatomic, nullable, strong) AADatabaseDetailTableView *tableView;
+@property(nonatomic, nullable, strong) NSMutableArray<NSArray *> *arrayFeatures;
 
 @end
-
-
-NS_ASSUME_NONNULL_END
 
 
 @implementation AADatabaseDetailViewController
