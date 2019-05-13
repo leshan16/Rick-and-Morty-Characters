@@ -16,7 +16,7 @@
 
  @param charactersInfo Данные персонажа
  */
-- (void)downloadNewPage:(NSData *)charactersInfo;
+- (void)downloadNewPage:(nullable NSData *)charactersInfo;
 
 @end
 
@@ -38,7 +38,7 @@
 
  @param arraySearchID Идентификаторы персонажей
  */
-- (void)downloadCharactersInfoForGame:(NSArray<NSNumber *> *)arraySearchID;
+- (void)downloadCharactersInfoForGame:(nullable NSArray<NSNumber *> *)arraySearchID;
 
 /**
  Метод отправляет запрос в сеть по конкретному URL и возвращает полученные данные
@@ -46,7 +46,7 @@
  @param urlStringImage Строка URL
  @return Данные из сети
  */
-- (NSData *)downloadCharacterImage:(NSString *)urlStringImage;
+- (nullable NSData *)downloadCharacterImage:(nullable NSString *)urlStringImage;
 
 
 /**

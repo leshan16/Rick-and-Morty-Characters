@@ -17,6 +17,6 @@
  */
 @interface AADataService : NSObject <AADataServiceInputProtocol>
 
-@property (nonatomic, weak) id<AADataServiceOutputProtocol> output; /**< Делегат внешних событий */
+@property (nonatomic, nullable, weak) id<AADataServiceOutputProtocol> output; /**< Делегат внешних событий */
 
 @end

@@ -17,7 +17,7 @@
  */
 @interface AADatabaseDetailViewController : UIViewController
 
-@property(nonatomic, strong) AACharacterModel *characterInfo; /**< Характеристики и картинка персонажа, передаваемые из
-                                                               AADatabaseViewController*/
+@property(nonatomic, nullable, strong) AACharacterModel *characterInfo; /**< Характеристики и картинка персонажа, 
+                                                                         передаваемые из AADatabaseViewController*/
 
 @end

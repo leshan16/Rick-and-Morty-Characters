@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 /**
  Кастомная ячейка таблицы, содержащяя в себе наименование и значение характеристики персонажа
  */
@@ -18,3 +21,6 @@
 @property(nonatomic, strong) UILabel *rightLabel; /**< Значение характеристики персонажа */
 
 @end
+
+
+NS_ASSUME_NONNULL_END

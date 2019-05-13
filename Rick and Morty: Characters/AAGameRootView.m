@@ -15,8 +15,6 @@
 
 @interface AAGameRootView() <AAGamePictureProtocol>
 
-
-
 @end
 
 @implementation AAGameRootView

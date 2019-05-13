@@ -27,6 +27,6 @@
 
  @return Массив из 4 случайных чисел от 0 до 493(общего числа персонажей)
  */
-+ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493;
++ (nonnull NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493;
 
 @end

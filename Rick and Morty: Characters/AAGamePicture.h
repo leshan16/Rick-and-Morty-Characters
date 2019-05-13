@@ -15,7 +15,7 @@
  */
 @interface AAGamePicture : UIImageView
 
-@property (nonatomic, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
-@property(nonatomic, copy) NSString *characterName; /**< Имя персонажа*/
+@property (nonatomic, nullable, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
+@property(nonatomic, nullable, copy) NSString *characterName; /**< Имя персонажа*/
 
 @end

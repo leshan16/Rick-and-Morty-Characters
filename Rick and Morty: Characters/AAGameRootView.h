@@ -14,12 +14,15 @@
 #import "AAActivityIndicatorView.h"
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 /**
  Контейнер для UI элементов, управляемых AAGameViewController
  */
 @interface AAGameRootView : UIView <AAGameRootViewProtocol>
 
-@property (nonatomic, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
+@property (nonatomic, nullable, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
 @property (nonatomic, strong) AAGameScoreLabel *scoreLabel; /**< Поле счета игрока */
 @property (nonatomic, strong) AAGameScoreLabel *bestScoreLabel; /**< Поле лучшего счета игрока за все время */
 @property (nonatomic, copy) NSArray<AAGamePicture *> *arrayPictures; /**< Массив четырех картинок персонажей */
@@ -28,3 +31,6 @@
                                                                            статуса получения данных из сети */
 
 @end
+
+
+NS_ASSUME_NONNULL_END

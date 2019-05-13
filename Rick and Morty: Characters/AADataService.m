@@ -12,6 +12,7 @@
 #import "AACharacterModel.h"
 #import "AppDelegate.h"
 #import "AACharacter+CoreDataClass.h"
+#import <CoreData/CoreData.h>
 
 
 @import CoreData;
@@ -19,15 +20,21 @@
 static const NSInteger AANumberOfCharactersInsidePage = 20;
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 @interface AADataService() <AANetworkServiceOutputProtocol>
 
 @property (nonatomic, strong) AANetworkService *networkService;
-@property (nonatomic, strong) NSMutableArray<AACharacterModel *> *arrayCharacters;
 @property (nonatomic, assign) NSInteger pageNumber;
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
+@property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 @end
+
+
+NS_ASSUME_NONNULL_END
 
 
 @implementation AADataService
@@ -159,12 +166,35 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
     {
         return _coreDataContext;
     }
-    UIApplication *application = [UIApplication sharedApplication];
-    NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
-    persistentContainer;
-    NSManagedObjectContext *context = container.viewContext;
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
     
     return context;
 }
+
+
+#pragma mark - Core Data stack
+
+@synthesize persistentContainer = _persistentContainer;
+
+- (NSPersistentContainer *)persistentContainer
+{
+    @synchronized (self)
+    {
+        if (_persistentContainer == nil)
+        {
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"Rick_and_Morty__Characters"];
+            [_persistentContainer loadPersistentStoresWithCompletionHandler:
+             ^(NSPersistentStoreDescription *storeDescription, NSError *error){
+                 if (error != nil)
+                 {
+                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                     abort();
+                 }
+             }];
+        }
+    }
+    return _persistentContainer;
+}
+
 
 @end
