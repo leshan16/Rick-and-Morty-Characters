@@ -19,6 +19,7 @@
 		CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */; };
 		CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */; };
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
+		CB72E0B1228C7B4100DE8126 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB72E0B0228C7B4100DE8126 /* OCMock.framework */; };
 		CBB568342270C71500FF5031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568332270C71500FF5031 /* main.m */; };
 		CBB568372270C71500FF5031 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568362270C71500FF5031 /* AppDelegate.m */; };
 		CBB5683D2270C71600FF5031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5683B2270C71600FF5031 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		CB52924A2285888A008A8728 /* AAGameRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRootView.h; sourceTree = "<group>"; };
 		CB52924B2285888A008A8728 /* AAGameRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameRootView.m; sourceTree = "<group>"; };
 		CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewProtocol.h; sourceTree = "<group>"; };
+		CB72E0B0228C7B4100DE8126 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		CBB5682F2270C71500FF5031 /* Rick and Morty: Characters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty: Characters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB568332270C71500FF5031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBB568352270C71500FF5031 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB72E0B1228C7B4100DE8126 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +264,14 @@
 			name = GameRootView;
 			sourceTree = "<group>";
 		};
+		CB72E0AF228C7B4000DE8126 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB72E0B0228C7B4100DE8126 /* OCMock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBB568262270C71500FF5031 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +279,7 @@
 				CBB5684E2270C71600FF5031 /* Rick and Morty: CharactersTests */,
 				CBB568592270C71600FF5031 /* Rick and Morty: CharactersUITests */,
 				CBB568302270C71500FF5031 /* Products */,
+				CB72E0AF228C7B4000DE8126 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -749,6 +761,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Rick and Morty: CharactersTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--CharactersTests";
@@ -761,6 +777,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Rick and Morty: CharactersTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--CharactersTests";

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+@import OCMock;
 #import "AAGameRandomNumbers.h"
 
 @interface AAGameRandomNumbersTests : XCTestCase
@@ -27,22 +28,20 @@
 
 - (void)testRandomNumberFrom0to3
 {
-    NSInteger result = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
-    XCTAssertGreaterThanOrEqual(result, 0);
-    XCTAssertLessThanOrEqual(result, 3);
+    NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:7];
+    NSInteger result = [AAGameRandomNumbers getRandomNumberFrom0to3:testDate];
+    XCTAssertEqual(result, 1);
 }
 
 
 - (void)testRandomFourNumbersFrom1to493
 {
-    NSArray<NSNumber *> *result = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:[NSDate date]];
+    NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:492];
+    NSArray<NSNumber *> *result = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:testDate];
     XCTAssertEqual(result.count, 4);
-    for (NSNumber *searchID in result)
-    {
-        XCTAssertGreaterThanOrEqual([searchID integerValue], 1);
-        XCTAssertLessThanOrEqual([searchID integerValue], 493);
-    }
-    NSSet *resultSet = [NSSet setWithArray:result];
-    XCTAssertEqual(resultSet.count, 4);
+    XCTAssertEqual([result[0] integerValue], 469);
+    XCTAssertEqual([result[1] integerValue], 482);
+    XCTAssertEqual([result[2] integerValue], 443);
+    XCTAssertEqual([result[3] integerValue], 430);
 }
 @end
