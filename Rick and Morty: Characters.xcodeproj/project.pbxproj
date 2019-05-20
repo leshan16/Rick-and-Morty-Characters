@@ -19,7 +19,6 @@
 		CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */; };
 		CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */; };
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
-		CB72E0B1228C7B4100DE8126 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB72E0B0228C7B4100DE8126 /* OCMock.framework */; };
 		CBB568342270C71500FF5031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568332270C71500FF5031 /* main.m */; };
 		CBB568372270C71500FF5031 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568362270C71500FF5031 /* AppDelegate.m */; };
 		CBB5683D2270C71600FF5031 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB5683B2270C71600FF5031 /* Main.storyboard */; };
@@ -127,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB72E0B1228C7B4100DE8126 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

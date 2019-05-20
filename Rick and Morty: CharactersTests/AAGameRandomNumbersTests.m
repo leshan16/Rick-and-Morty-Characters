@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-@import OCMock;
 #import "AAGameRandomNumbers.h"
 
 @interface AAGameRandomNumbersTests : XCTestCase

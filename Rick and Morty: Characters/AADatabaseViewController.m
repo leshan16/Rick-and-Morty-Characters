@@ -39,12 +39,6 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
 #pragma mark - Prepare UI
 
 - (void)prepareUI
