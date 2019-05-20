@@ -35,12 +35,6 @@ static const CGFloat AATabBarItemHeight = 50.0;
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
 #pragma mark - Prepare UI
 
 - (void)prepareUI

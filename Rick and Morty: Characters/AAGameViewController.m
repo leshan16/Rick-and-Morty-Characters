@@ -30,12 +30,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
 #pragma mark - Prepare UI
 
 - (void)prepareUI
