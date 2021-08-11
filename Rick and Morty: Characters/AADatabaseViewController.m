@@ -7,11 +7,8 @@
 //
 
 #import "AADatabaseViewController.h"
-#import "AADatabaseTitleLabel.h"
-#import "AADatabaseCollectionView.h"
 #import "AADataService.h"
 #import "AADatabaseDetailViewController.h"
-#import "AAActivityIndicatorView.h"
 #import "AADatabaseCollectionViewCell.h"
 #import "AACharacterModel.h"
 
@@ -21,10 +18,10 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 
 @interface AADatabaseViewController () <AADataServiceOutputProtocol, UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, nullable, strong) AADatabaseTitleLabel *titleLabel;
-@property (nonatomic, nullable, strong) AADatabaseCollectionView *collectionView;
+@property (nonatomic, nullable, strong) UILabel *titleLabel;
+@property (nonatomic, nullable, strong) UICollectionView *collectionView;
 @property (nonatomic, nullable, strong) AADataService *dataService;
-@property (nonatomic, nullable, strong) AAActivityIndicatorView *activityIndicator;
+@property (nonatomic, nullable, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, nullable, strong) NSMutableArray<AACharacterModel *> *arrayCharacters;
 
 @end
@@ -45,28 +42,34 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 {
     self.view.backgroundColor = UIColor.whiteColor;
 
-    self.titleLabel = [[AADatabaseTitleLabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 50)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), 50)];
     self.titleLabel.text = @"Rick and Morty: Characters";
+	self.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.titleLabel.textColor = UIColor.redColor;
+
     self.navigationItem.titleView = self.titleLabel;
     
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.minimumLineSpacing = AACellSpacing;
     flowLayout.minimumInteritemSpacing = AACellSpacing;
-    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.frame) / 2 - AACellSpacing,
-                                     CGRectGetWidth(self.view.frame) / 2);
-    
-    self.collectionView = [[AADatabaseCollectionView alloc]
-                           initWithFrame:CGRectMake(0, AACellSpacing, CGRectGetWidth(self.view.frame),
-                                                    CGRectGetHeight(self.view.frame) - AACellSpacing)
-                           collectionViewLayout:flowLayout];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    flowLayout.itemSize = CGSizeMake(CGRectGetWidth(self.view.frame) / 2 - AACellSpacing, CGRectGetWidth(self.view.frame) / 2);
+
+	CGRect collectionViewFrame = CGRectMake(0, AACellSpacing, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - AACellSpacing);
+    self.collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayout];
+	self.collectionView.backgroundColor = UIColor.whiteColor;
+	self.collectionView.layer.contents = (id)[UIImage imageNamed:@"RickLayer"].CGImage;
+	[self.collectionView registerClass:[AADatabaseCollectionViewCell class]
+			forCellWithReuseIdentifier:NSStringFromClass([AADatabaseCollectionViewCell class])];
+	self.collectionView.delegate = self;
+	self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
     
-    self.activityIndicator = [[AAActivityIndicatorView alloc]
+    self.activityIndicator = [[UIActivityIndicatorView alloc]
                               initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - CGRectGetWidth(self.view.frame) / 8,
                                                        CGRectGetHeight(self.view.frame) / 2 - CGRectGetWidth(self.view.frame) / 8,
                                                        CGRectGetWidth(self.view.frame) / 4, CGRectGetWidth(self.view.frame) / 4)];
+	self.activityIndicator.color = UIColor.redColor;
+	self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
     [self.view addSubview:self.activityIndicator];
     [self.activityIndicator startAnimating];
     

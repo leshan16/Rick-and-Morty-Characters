@@ -7,10 +7,7 @@
 //
 
 #import "AAGameRootView.h"
-#import "AAGameScoreLabel.h"
 #import "AAGamePicture.h"
-#import "AAGameQuestionLabel.h"
-#import "AAActivityIndicatorView.h"
 
 
 @interface AAGameRootView() <AAGamePictureProtocol>
@@ -26,18 +23,38 @@
     {
         self.layer.contents = (id)[UIImage imageNamed:@"GameLayer"].CGImage;
         
-        _scoreLabel = [[AAGameScoreLabel alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(frame) / 3,
-                                                                             CGRectGetWidth(frame) / 12)];
-        _scoreLabel.text = [NSString stringWithFormat:@"Score: %d", 0];
+        _scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(frame) / 3, CGRectGetWidth(frame) / 12)];
+		_scoreLabel.backgroundColor = UIColor.whiteColor;
+		_scoreLabel.layer.borderColor = UIColor.blackColor.CGColor;
+		_scoreLabel.layer.borderWidth = CGRectGetHeight(frame) / 6;
+		_scoreLabel.layer.masksToBounds = YES;
+		_scoreLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_scoreLabel.textColor = UIColor.redColor;
+		_scoreLabel.textAlignment = NSTextAlignmentCenter;
+		_scoreLabel.text = [NSString stringWithFormat:@"Score: %d", 0];
         [self addSubview:_scoreLabel];
         
-        _bestScoreLabel = [[AAGameScoreLabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) -
-                                                                                 CGRectGetWidth(frame) / 3, 30,
-                                                                                 CGRectGetWidth(frame) / 3,
-                                                                                 CGRectGetWidth(frame) / 12)];
+		_bestScoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) -
+																	CGRectGetWidth(frame) / 3, 30,
+																	CGRectGetWidth(frame) / 3,
+																	CGRectGetWidth(frame) / 12)];
+		_bestScoreLabel.backgroundColor = UIColor.whiteColor;
+		_bestScoreLabel.layer.borderColor = UIColor.blackColor.CGColor;
+		_bestScoreLabel.layer.borderWidth = CGRectGetHeight(frame) / 6;
+		_bestScoreLabel.layer.masksToBounds = YES;
+		_bestScoreLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_bestScoreLabel.textColor = UIColor.redColor;
+		_bestScoreLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_bestScoreLabel];
         
-        _questionLabel = [[AAGameQuestionLabel alloc] initWithFrame:[self resultFrameQuestionLabel]];
+        _questionLabel = [[UILabel alloc] initWithFrame:[self resultFrameQuestionLabel]];
+		_questionLabel.backgroundColor = UIColor.blackColor;
+		_questionLabel.layer.borderColor = UIColor.orangeColor.CGColor;
+		_questionLabel.layer.borderWidth = CGRectGetHeight(frame) / 12;
+		_questionLabel.layer.masksToBounds = YES;
+		_questionLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_questionLabel.textColor = UIColor.orangeColor;
+		_questionLabel.textAlignment = NSTextAlignmentCenter;
         _questionLabel.text = @"Question string";
         [self addSubview:_questionLabel];
         
@@ -59,10 +76,12 @@
         
         _arrayPictures = @[leftUpPicture, rightUpPicture, leftDownPicture, rightDownPicture];
         
-        _activityIndicator = [[AAActivityIndicatorView alloc]
-                                  initWithFrame:CGRectMake(CGRectGetWidth(frame) / 2 - CGRectGetWidth(frame) / 8,
-                                                           CGRectGetHeight(frame) / 2 - CGRectGetWidth(frame) / 8,
-                                                           CGRectGetWidth(frame) / 4, CGRectGetWidth(frame) / 4)];
+		_activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame) / 2 - CGRectGetWidth(frame) / 8,
+																					   CGRectGetHeight(frame) / 2 - CGRectGetWidth(frame) / 8,
+																					   CGRectGetWidth(frame) / 4,
+																					   CGRectGetWidth(frame) / 4)];
+		_activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
+		_activityIndicator.color = UIColor.redColor;
         [self addSubview:_activityIndicator];
         [_activityIndicator startAnimating];
     }

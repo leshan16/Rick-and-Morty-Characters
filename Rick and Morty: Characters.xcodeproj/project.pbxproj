@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB18CD2C227DA7B400F92C2F /* AAActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */; };
 		CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataService.m */; };
 		CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */; };
 		CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */; };
 		CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */; };
-		CB249B692276F01100C2C84B /* AADatabaseDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */; };
 		CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */; };
-		CB249B722277406A00C2C84B /* AAGameScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B712277406A00C2C84B /* AAGameScoreLabel.m */; };
 		CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7522774BA300C2C84B /* AAGamePicture.m */; };
-		CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */; };
 		CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */; };
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
 		CBB568342270C71500FF5031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568332270C71500FF5031 /* main.m */; };
@@ -29,8 +25,6 @@
 		CBB5685B2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5685A2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m */; };
 		CBB5686A2270F2B100FF5031 /* AADatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568692270F2B100FF5031 /* AADatabaseViewController.m */; };
 		CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5686F2270F2E000FF5031 /* AAGameViewController.m */; };
-		CBD555672275D35600482512 /* AADatabaseTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555662275D35600482512 /* AADatabaseTitleLabel.m */; };
-		CBD555732275DA5E00482512 /* AADatabaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */; };
 		CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */; };
 		CBD5557B2275F98000482512 /* AACharacterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5557A2275F98000482512 /* AACharacterModel.m */; };
 		CBD5557F2275FC7400482512 /* AANetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5557E2275FC7400482512 /* AANetworkService.m */; };
@@ -54,8 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB18CD2A227DA7B400F92C2F /* AAActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAActivityIndicatorView.h; sourceTree = "<group>"; };
-		CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAActivityIndicatorView.m; sourceTree = "<group>"; };
 		CB18CD3B227DEF3700F92C2F /* AADataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataService.h; sourceTree = "<group>"; };
 		CB18CD3C227DEF3700F92C2F /* AADataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataService.m; sourceTree = "<group>"; };
 		CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADataServiceProtocol.h; sourceTree = "<group>"; };
@@ -65,16 +57,10 @@
 		CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailViewController.h; sourceTree = "<group>"; };
 		CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailViewController.m; sourceTree = "<group>"; };
-		CB249B672276F01100C2C84B /* AADatabaseDetailTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailTableView.h; sourceTree = "<group>"; };
-		CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailTableView.m; sourceTree = "<group>"; };
 		CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailTableViewCell.h; sourceTree = "<group>"; };
 		CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailTableViewCell.m; sourceTree = "<group>"; };
-		CB249B702277406A00C2C84B /* AAGameScoreLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameScoreLabel.h; sourceTree = "<group>"; };
-		CB249B712277406A00C2C84B /* AAGameScoreLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameScoreLabel.m; sourceTree = "<group>"; };
 		CB249B7422774BA300C2C84B /* AAGamePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGamePicture.h; sourceTree = "<group>"; };
 		CB249B7522774BA300C2C84B /* AAGamePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGamePicture.m; sourceTree = "<group>"; };
-		CB249B7822774DBF00C2C84B /* AAGameQuestionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameQuestionLabel.h; sourceTree = "<group>"; };
-		CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameQuestionLabel.m; sourceTree = "<group>"; };
 		CB52924622857EA1008A8728 /* AAGameRandomNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRandomNumbers.h; sourceTree = "<group>"; };
 		CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameRandomNumbers.m; sourceTree = "<group>"; };
 		CB52924A2285888A008A8728 /* AAGameRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRootView.h; sourceTree = "<group>"; };
@@ -101,10 +87,6 @@
 		CBB5686E2270F2E000FF5031 /* AAGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameViewController.h; sourceTree = "<group>"; };
 		CBB5686F2270F2E000FF5031 /* AAGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameViewController.m; sourceTree = "<group>"; };
 		CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGamePictureProtocol.h; sourceTree = "<group>"; };
-		CBD555652275D35600482512 /* AADatabaseTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseTitleLabel.h; sourceTree = "<group>"; };
-		CBD555662275D35600482512 /* AADatabaseTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseTitleLabel.m; sourceTree = "<group>"; };
-		CBD555712275DA5E00482512 /* AADatabaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseCollectionView.h; sourceTree = "<group>"; };
-		CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseCollectionView.m; sourceTree = "<group>"; };
 		CBD555752275DB2200482512 /* AADatabaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseCollectionViewCell.h; sourceTree = "<group>"; };
 		CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseCollectionViewCell.m; sourceTree = "<group>"; };
 		CBD555792275F98000482512 /* AACharacterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACharacterModel.h; sourceTree = "<group>"; };
@@ -139,15 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB18CD29227DA75000F92C2F /* ActivityIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				CB18CD2A227DA7B400F92C2F /* AAActivityIndicatorView.h */,
-				CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */,
-			);
-			name = ActivityIndicatorView;
-			sourceTree = "<group>";
-		};
 		CB18CD33227DE86900F92C2F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,18 +147,8 @@
 			children = (
 				CB249B6E22773FE100C2C84B /* DatabaseDetailViewController */,
 				CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */,
-				CB249B652276EF7B00C2C84B /* DatabaseDetailTableView */,
 			);
 			name = DatabaseDetailViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CB249B652276EF7B00C2C84B /* DatabaseDetailTableView */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B672276F01100C2C84B /* AADatabaseDetailTableView.h */,
-				CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */,
-			);
-			name = DatabaseDetailTableView;
 			sourceTree = "<group>";
 		};
 		CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */ = {
@@ -215,15 +178,6 @@
 			name = DatabaseDetailViewController;
 			sourceTree = "<group>";
 		};
-		CB249B6F2277402200C2C84B /* GameScoreLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B702277406A00C2C84B /* AAGameScoreLabel.h */,
-				CB249B712277406A00C2C84B /* AAGameScoreLabel.m */,
-			);
-			name = GameScoreLabel;
-			sourceTree = "<group>";
-		};
 		CB249B7322774B3F00C2C84B /* GamePicture */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,15 +186,6 @@
 				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
 			);
 			name = GamePicture;
-			sourceTree = "<group>";
-		};
-		CB249B7722774D4900C2C84B /* GameQuestionLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B7822774DBF00C2C84B /* AAGameQuestionLabel.h */,
-				CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */,
-			);
-			name = GameQuestionLabel;
 			sourceTree = "<group>";
 		};
 		CB52924522857E58008A8728 /* GameRandomNumbers */ = {
@@ -296,7 +241,6 @@
 			children = (
 				CB18CD34227DE8CD00F92C2F /* DataService */,
 				CB18CD33227DE86900F92C2F /* CoreData */,
-				CB18CD29227DA75000F92C2F /* ActivityIndicatorView */,
 				CBD555782275F94A00482512 /* CharacterModel */,
 				CBD5557C2275FC1200482512 /* NetworkService */,
 				CBD5556A2275D74400482512 /* GameTabBar */,
@@ -344,7 +288,6 @@
 			children = (
 				CB249B5D2276E6CE00C2C84B /* DatabaseDetailViewControllerGroup */,
 				CBD5556B2275D76D00482512 /* DatabaseViewControllerGroup */,
-				CBD5556C2275D78800482512 /* DatabaseTitleLabel */,
 			);
 			name = DatabaseTabBar;
 			sourceTree = "<group>";
@@ -354,9 +297,7 @@
 			children = (
 				CB5292492285884B008A8728 /* GameRootView */,
 				CB52924522857E58008A8728 /* GameRandomNumbers */,
-				CB249B7722774D4900C2C84B /* GameQuestionLabel */,
 				CB249B7322774B3F00C2C84B /* GamePicture */,
-				CB249B6F2277402200C2C84B /* GameScoreLabel */,
 				CBD5556E2275D7C800482512 /* GameViewController */,
 			);
 			name = GameTabBar;
@@ -367,18 +308,8 @@
 			children = (
 				CB249B6D22773F8B00C2C84B /* DatabaseViewController */,
 				CBD555702275D83E00482512 /* DatabaseCollectionViewCell */,
-				CBD5556F2275D82B00482512 /* DatabaseCollectionView */,
 			);
 			name = DatabaseViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CBD5556C2275D78800482512 /* DatabaseTitleLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CBD555652275D35600482512 /* AADatabaseTitleLabel.h */,
-				CBD555662275D35600482512 /* AADatabaseTitleLabel.m */,
-			);
-			name = DatabaseTitleLabel;
 			sourceTree = "<group>";
 		};
 		CBD5556E2275D7C800482512 /* GameViewController */ = {
@@ -388,15 +319,6 @@
 				CBB5686F2270F2E000FF5031 /* AAGameViewController.m */,
 			);
 			name = GameViewController;
-			sourceTree = "<group>";
-		};
-		CBD5556F2275D82B00482512 /* DatabaseCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				CBD555712275DA5E00482512 /* AADatabaseCollectionView.h */,
-				CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */,
-			);
-			name = DatabaseCollectionView;
 			sourceTree = "<group>";
 		};
 		CBD555702275D83E00482512 /* DatabaseCollectionViewCell */ = {
@@ -494,7 +416,7 @@
 				TargetAttributes = {
 					CBB5682E2270C71500FF5031 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 3ZD3MY7RUD;
+						DevelopmentTeam = QGYUUW2DD3;
 						ProvisioningStyle = Automatic;
 					};
 					CBB5684A2270C71600FF5031 = {
@@ -511,7 +433,7 @@
 			};
 			buildConfigurationList = CBB5682A2270C71500FF5031 /* Build configuration list for PBXProject "Rick and Morty: Characters" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -561,14 +483,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */,
-				CBD555732275DA5E00482512 /* AADatabaseCollectionView.m in Sources */,
 				CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */,
 				CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */,
-				CB18CD2C227DA7B400F92C2F /* AAActivityIndicatorView.m in Sources */,
 				CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */,
-				CB249B722277406A00C2C84B /* AAGameScoreLabel.m in Sources */,
-				CB249B692276F01100C2C84B /* AADatabaseDetailTableView.m in Sources */,
 				CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */,
 				CBB5686A2270F2B100FF5031 /* AADatabaseViewController.m in Sources */,
 				CBD5557F2275FC7400482512 /* AANetworkService.m in Sources */,
@@ -577,7 +494,6 @@
 				CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */,
 				CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */,
 				CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */,
-				CBD555672275D35600482512 /* AADatabaseTitleLabel.m in Sources */,
 				CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */,
 				CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */,
 				CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */,
@@ -677,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -719,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -731,13 +647,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ZD3MY7RUD;
+				DEVELOPMENT_TEAM = QGYUUW2DD3;
 				INFOPLIST_FILE = "Rick and Morty: Characters/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--Characters";
+				PRODUCT_BUNDLE_IDENTIFIER = "Rick-and-Morty--Characters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -745,13 +661,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ZD3MY7RUD;
+				DEVELOPMENT_TEAM = QGYUUW2DD3;
 				INFOPLIST_FILE = "Rick and Morty: Characters/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--Characters";
+				PRODUCT_BUNDLE_IDENTIFIER = "Rick-and-Morty--Characters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
