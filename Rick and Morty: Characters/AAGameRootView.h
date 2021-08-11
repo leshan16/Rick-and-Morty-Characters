@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AAGameRootViewProtocol.h"
-#import "AAGameScoreLabel.h"
 #import "AAGamePicture.h"
-#import "AAGameQuestionLabel.h"
-#import "AAActivityIndicatorView.h"
 
 
 /**
@@ -20,11 +17,10 @@
 @interface AAGameRootView : UIView <AAGameRootViewProtocol>
 
 @property (nonatomic, nullable, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
-@property (nonatomic, nullable, strong) AAGameScoreLabel *scoreLabel; /**< Поле счета игрока */
-@property (nonatomic, nullable, strong) AAGameScoreLabel *bestScoreLabel; /**< Поле лучшего счета игрока за все время */
+@property (nonatomic, nullable, strong) UILabel *scoreLabel; /**< Поле счета игрока */
+@property (nonatomic, nullable, strong) UILabel *bestScoreLabel; /**< Поле лучшего счета игрока за все время */
 @property (nonatomic, nullable, copy) NSArray<AAGamePicture *> *arrayPictures; /**< Массив четырех картинок персонажей */
-@property (nonatomic, nullable, strong) AAGameQuestionLabel *questionLabel; /**< Поле с именем угадываемого персонажа */
-@property (nonatomic, nullable, strong) AAActivityIndicatorView *activityIndicator; /**< Индикатор активности для отображения
-                                                                           статуса получения данных из сети */
+@property (nonatomic, nullable, strong) UILabel *questionLabel; /**< Поле с именем угадываемого персонажа */
+@property (nonatomic, nullable, strong) UIActivityIndicatorView *activityIndicator; /**< Индикатор активности для отображения статуса получения данных из сети */
 
 @end

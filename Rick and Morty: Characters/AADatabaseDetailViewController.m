@@ -8,8 +8,6 @@
 
 #import "AADatabaseDetailViewController.h"
 #import "AACharacterModel.h"
-#import "AADatabaseTitleLabel.h"
-#import "AADatabaseDetailTableView.h"
 #import "AADatabaseDetailTableViewCell.h"
 
 static const CGFloat AANavigationItemHeight = 65.0;
@@ -19,8 +17,8 @@ static const CGFloat AATabBarItemHeight = 50.0;
 @interface AADatabaseDetailViewController () <UITableViewDataSource>
 
 @property(nonatomic, nullable, strong) UIImageView *imageView;
-@property(nonatomic, nullable, strong) AADatabaseTitleLabel *titleLabel;
-@property(nonatomic, nullable, strong) AADatabaseDetailTableView *tableView;
+@property(nonatomic, nullable, strong) UILabel *titleLabel;
+@property(nonatomic, nullable, strong) UITableView *tableView;
 @property(nonatomic, nullable, strong) NSMutableArray<NSArray *> *arrayFeatures;
 
 @end
@@ -49,18 +47,22 @@ static const CGFloat AATabBarItemHeight = 50.0;
     self.imageView.image = self.characterInfo.image;
     [self.view addSubview:self.imageView];
     
-    self.titleLabel = [[AADatabaseTitleLabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame),
-                                                                             AATabBarItemHeight)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, CGRectGetWidth(self.view.frame), AATabBarItemHeight)];
     self.titleLabel.text = self.characterInfo.name;
+	self.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.titleLabel.textColor = UIColor.redColor;
+	
     self.navigationItem.titleView = self.titleLabel;
-    
-    self.tableView = [[AADatabaseDetailTableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.imageView.frame),
-                                                                                 CGRectGetWidth(self.view.frame),
-                                                                                 CGRectGetHeight(self.view.frame) -
-                                                                                 CGRectGetMaxY(self.imageView.frame) -
-                                                                                 AATabBarItemHeight)
-                                                                style:UITableViewStylePlain];
+
+	CGFloat tableViewHeight = CGRectGetHeight(self.view.frame) - CGRectGetMaxY(self.imageView.frame) - AATabBarItemHeight;
+	CGRect tableViewFrame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame), CGRectGetWidth(self.view.frame), tableViewHeight);
+	self.tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStylePlain];
+	self.tableView.rowHeight = tableViewHeight / 4;
+	self.tableView.backgroundColor = UIColor.blackColor;
+	[self.tableView registerClass:[AADatabaseDetailTableViewCell class]
+		   forCellReuseIdentifier:NSStringFromClass([AADatabaseDetailTableViewCell class])];
     self.tableView.dataSource = self;
+	
     self.arrayFeatures = [NSMutableArray new];
     [self.arrayFeatures addObject:@[@"NAME:", self.characterInfo.name]];
     [self.arrayFeatures addObject:@[@"STATUS:", self.characterInfo.status]];
