@@ -13,7 +13,7 @@
 
 + (NSInteger)getRandomNumberFrom0to3:(NSDate *)currentDate
 {
-    return [[self getDateComponents:currentDate] second] % 3;
+    return [[self getDateComponents:currentDate] second] % 4;
 }
 
 

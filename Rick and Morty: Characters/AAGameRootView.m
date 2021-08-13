@@ -26,9 +26,9 @@
         _scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, CGRectGetWidth(frame) / 3, CGRectGetWidth(frame) / 12)];
 		_scoreLabel.backgroundColor = UIColor.whiteColor;
 		_scoreLabel.layer.borderColor = UIColor.blackColor.CGColor;
-		_scoreLabel.layer.borderWidth = CGRectGetHeight(frame) / 6;
+		_scoreLabel.layer.borderWidth = CGRectGetWidth(frame) / 72;
 		_scoreLabel.layer.masksToBounds = YES;
-		_scoreLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_scoreLabel.layer.cornerRadius = CGRectGetWidth(frame) / 24;
 		_scoreLabel.textColor = UIColor.redColor;
 		_scoreLabel.textAlignment = NSTextAlignmentCenter;
 		_scoreLabel.text = [NSString stringWithFormat:@"Score: %d", 0];
@@ -40,19 +40,19 @@
 																	CGRectGetWidth(frame) / 12)];
 		_bestScoreLabel.backgroundColor = UIColor.whiteColor;
 		_bestScoreLabel.layer.borderColor = UIColor.blackColor.CGColor;
-		_bestScoreLabel.layer.borderWidth = CGRectGetHeight(frame) / 6;
+		_bestScoreLabel.layer.borderWidth = CGRectGetWidth(frame) / 72;
 		_bestScoreLabel.layer.masksToBounds = YES;
-		_bestScoreLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_bestScoreLabel.layer.cornerRadius  = CGRectGetWidth(frame) / 24;
 		_bestScoreLabel.textColor = UIColor.redColor;
 		_bestScoreLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_bestScoreLabel];
-        
+
         _questionLabel = [[UILabel alloc] initWithFrame:[self resultFrameQuestionLabel]];
 		_questionLabel.backgroundColor = UIColor.blackColor;
 		_questionLabel.layer.borderColor = UIColor.orangeColor.CGColor;
-		_questionLabel.layer.borderWidth = CGRectGetHeight(frame) / 12;
+		_questionLabel.layer.borderWidth = CGRectGetWidth(frame) / 96;
 		_questionLabel.layer.masksToBounds = YES;
-		_questionLabel.layer.cornerRadius  = CGRectGetHeight(frame) / 2;
+		_questionLabel.layer.cornerRadius  = CGRectGetWidth(frame) / 16;
 		_questionLabel.textColor = UIColor.orangeColor;
 		_questionLabel.textAlignment = NSTextAlignmentCenter;
         _questionLabel.text = @"Question string";
