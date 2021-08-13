@@ -121,90 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB18CD33227DE86900F92C2F /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */,
-				CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */,
-				CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */,
-				CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		CB18CD34227DE8CD00F92C2F /* DataService */ = {
-			isa = PBXGroup;
-			children = (
-				CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */,
-				CB18CD3B227DEF3700F92C2F /* AADataService.h */,
-				CB18CD3C227DEF3700F92C2F /* AADataService.m */,
-			);
-			name = DataService;
-			sourceTree = "<group>";
-		};
-		CB249B5D2276E6CE00C2C84B /* DatabaseDetailViewControllerGroup */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6E22773FE100C2C84B /* DatabaseDetailViewController */,
-				CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */,
-			);
-			name = DatabaseDetailViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */,
-				CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */,
-			);
-			name = DatabaseDetailTableViewCell;
-			sourceTree = "<group>";
-		};
-		CB249B6D22773F8B00C2C84B /* DatabaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CBB568682270F2B100FF5031 /* AADatabaseViewController.h */,
-				CBB568692270F2B100FF5031 /* AADatabaseViewController.m */,
-			);
-			name = DatabaseViewController;
-			sourceTree = "<group>";
-		};
-		CB249B6E22773FE100C2C84B /* DatabaseDetailViewController */ = {
+		CB249B5D2276E6CE00C2C84B /* DatabaseDetail */ = {
 			isa = PBXGroup;
 			children = (
 				CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */,
 				CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */,
+				CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */,
+				CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */,
 			);
-			name = DatabaseDetailViewController;
-			sourceTree = "<group>";
-		};
-		CB249B7322774B3F00C2C84B /* GamePicture */ = {
-			isa = PBXGroup;
-			children = (
-				CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */,
-				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
-				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
-			);
-			name = GamePicture;
-			sourceTree = "<group>";
-		};
-		CB52924522857E58008A8728 /* GameRandomNumbers */ = {
-			isa = PBXGroup;
-			children = (
-				CB52924622857EA1008A8728 /* AAGameRandomNumbers.h */,
-				CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */,
-			);
-			name = GameRandomNumbers;
-			sourceTree = "<group>";
-		};
-		CB5292492285884B008A8728 /* GameRootView */ = {
-			isa = PBXGroup;
-			children = (
-				CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */,
-				CB52924A2285888A008A8728 /* AAGameRootView.h */,
-				CB52924B2285888A008A8728 /* AAGameRootView.m */,
-			);
-			name = GameRootView;
+			name = DatabaseDetail;
 			sourceTree = "<group>";
 		};
 		CB72E0AF228C7B4000DE8126 /* Frameworks */ = {
@@ -239,12 +164,10 @@
 		CBB568312270C71500FF5031 /* Rick and Morty: Characters */ = {
 			isa = PBXGroup;
 			children = (
-				CB18CD34227DE8CD00F92C2F /* DataService */,
-				CB18CD33227DE86900F92C2F /* CoreData */,
-				CBD555782275F94A00482512 /* CharacterModel */,
-				CBD5557C2275FC1200482512 /* NetworkService */,
-				CBD5556A2275D74400482512 /* GameTabBar */,
-				CBD555682275D6EA00482512 /* DatabaseTabBar */,
+				F8F4F87B26C6D21000A24636 /* ServiceLayer */,
+				F8F4F87A26C6D19F00A24636 /* DataLayer */,
+				F8F4F87926C6D18500A24636 /* DomainLayer */,
+				F8F4F87826C6D0E700A24636 /* PresentationLayer */,
 				CBB568352270C71500FF5031 /* AppDelegate.h */,
 				CBB568362270C71500FF5031 /* AppDelegate.m */,
 				CBB5683B2270C71600FF5031 /* Main.storyboard */,
@@ -283,70 +206,75 @@
 			path = "Rick and Morty: CharactersUITests";
 			sourceTree = "<group>";
 		};
-		CBD555682275D6EA00482512 /* DatabaseTabBar */ = {
+		CBD5556A2275D74400482512 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				CB249B5D2276E6CE00C2C84B /* DatabaseDetailViewControllerGroup */,
-				CBD5556B2275D76D00482512 /* DatabaseViewControllerGroup */,
-			);
-			name = DatabaseTabBar;
-			sourceTree = "<group>";
-		};
-		CBD5556A2275D74400482512 /* GameTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				CB5292492285884B008A8728 /* GameRootView */,
-				CB52924522857E58008A8728 /* GameRandomNumbers */,
-				CB249B7322774B3F00C2C84B /* GamePicture */,
-				CBD5556E2275D7C800482512 /* GameViewController */,
-			);
-			name = GameTabBar;
-			sourceTree = "<group>";
-		};
-		CBD5556B2275D76D00482512 /* DatabaseViewControllerGroup */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6D22773F8B00C2C84B /* DatabaseViewController */,
-				CBD555702275D83E00482512 /* DatabaseCollectionViewCell */,
-			);
-			name = DatabaseViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CBD5556E2275D7C800482512 /* GameViewController */ = {
-			isa = PBXGroup;
-			children = (
+				CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */,
+				CB52924A2285888A008A8728 /* AAGameRootView.h */,
+				CB52924B2285888A008A8728 /* AAGameRootView.m */,
+				CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */,
+				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
+				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
 				CBB5686E2270F2E000FF5031 /* AAGameViewController.h */,
 				CBB5686F2270F2E000FF5031 /* AAGameViewController.m */,
 			);
-			name = GameViewController;
+			name = Game;
 			sourceTree = "<group>";
 		};
-		CBD555702275D83E00482512 /* DatabaseCollectionViewCell */ = {
+		CBD5556B2275D76D00482512 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CBB568682270F2B100FF5031 /* AADatabaseViewController.h */,
+				CBB568692270F2B100FF5031 /* AADatabaseViewController.m */,
 				CBD555752275DB2200482512 /* AADatabaseCollectionViewCell.h */,
 				CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */,
 			);
-			name = DatabaseCollectionViewCell;
+			name = Database;
 			sourceTree = "<group>";
 		};
-		CBD555782275F94A00482512 /* CharacterModel */ = {
+		F8F4F87826C6D0E700A24636 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CBD555792275F98000482512 /* AACharacterModel.h */,
-				CBD5557A2275F98000482512 /* AACharacterModel.m */,
+				CBD5556B2275D76D00482512 /* Database */,
+				CB249B5D2276E6CE00C2C84B /* DatabaseDetail */,
+				CBD5556A2275D74400482512 /* Game */,
 			);
-			name = CharacterModel;
+			name = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		CBD5557C2275FC1200482512 /* NetworkService */ = {
+		F8F4F87926C6D18500A24636 /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB52924622857EA1008A8728 /* AAGameRandomNumbers.h */,
+				CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */,
+			);
+			name = DomainLayer;
+			sourceTree = "<group>";
+		};
+		F8F4F87A26C6D19F00A24636 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */,
+				CB18CD3B227DEF3700F92C2F /* AADataService.h */,
+				CB18CD3C227DEF3700F92C2F /* AADataService.m */,
+				CBD555792275F98000482512 /* AACharacterModel.h */,
+				CBD5557A2275F98000482512 /* AACharacterModel.m */,
+				CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */,
+				CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */,
+				CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */,
+				CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */,
+			);
+			name = DataLayer;
+			sourceTree = "<group>";
+		};
+		F8F4F87B26C6D21000A24636 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
 				CBD555802275FD8B00482512 /* AANetworkServiceProtocol.h */,
 				CBD5557D2275FC7400482512 /* AANetworkService.h */,
 				CBD5557E2275FC7400482512 /* AANetworkService.m */,
 			);
-			name = NetworkService;
+			name = ServiceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
