@@ -6,15 +6,13 @@
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import "AANetworkServiceProtocol.h"
 
 
 /**
  Класс, отправляющий запросы в сеть и получающий ответы из сети
  */
-@interface AANetworkService : NSObject <AANetworkServiceIntputProtocol>
-
-@property (nonatomic, nullable, weak) id<AANetworkServiceOutputProtocol> output; /**< Делегат внешних событий */
+@interface AANetworkService : NSObject <AANetworkServiceProtocol>
 
 @end

@@ -12,7 +12,7 @@
 #import "AAGameRootView.h"
 
 
-@interface AAGameViewController () <AANetworkServiceOutputProtocol, AAGamePictureProtocol>
+@interface AAGameViewController () <AAGamePictureProtocol>
 
 @property (nonatomic, nullable, strong) AAGameRootView *rootView;
 @property (nonatomic, assign) NSInteger score;
@@ -43,7 +43,6 @@
     [self.view addSubview:self.rootView];
     self.score = 0;
     self.networkService = [AANetworkService new];
-    self.networkService.output = self;
     [self getNewQuestion];
 }
 
@@ -54,35 +53,38 @@
 {
     NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:[NSDate date]];
     [self.rootView.activityIndicator startAnimating];
-    [self.networkService downloadCharactersInfoForGame:arraySearchID];
+	[self.networkService downloadCharactersInfoForIds:arraySearchID completionHandler:^(NSData * _Nullable charactersData) {
+		[self.rootView.activityIndicator stopAnimating];
+		if (!charactersData)
+		{
+			[self showAlert:@"No internet connection"];
+			return;
+		}
+		NSArray *arrayCharacterInfo = [NSJSONSerialization JSONObjectWithData:charactersData options:kNilOptions error:nil];
+		NSInteger indexItem = 0;
+		dispatch_group_t group = dispatch_group_create();
+		for (NSDictionary *item in arrayCharacterInfo)
+		{
+			self.rootView.arrayPictures[indexItem].characterName = item[@"name"];
+			dispatch_group_enter(group);
+			[self.networkService downloadCharacterImage:item[@"image"] completionHandler:^(NSData * _Nullable imageData) {
+				if (imageData)
+				{
+					self.rootView.arrayPictures[indexItem].image = [UIImage imageWithData:imageData];
+				}
+				dispatch_group_leave(group);
+			}];
+			indexItem++;
+		}
+		dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+			NSInteger indexSearchPicture = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
+			self.rootView.questionLabel.text = self.rootView.arrayPictures[indexSearchPicture].characterName;
+			[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+				[self.rootView installFinishFrame];
+			} completion: nil];
+		});
+	}];
 }
-
-
-#pragma mark - AANetworkServiceOutputProtocol
-
-- (void)downloadNewPage:(NSData *)charactersInfo
-{
-    [self.rootView.activityIndicator stopAnimating];
-    if (!charactersInfo)
-    {
-        [self showAlert:@"No internet connection"];
-        return;
-    }
-    NSArray *arrayCharacterInfo = [NSJSONSerialization JSONObjectWithData:charactersInfo options:kNilOptions error:nil];
-    NSInteger indexItem = 0;
-    for (NSDictionary *item in arrayCharacterInfo)
-    {
-        self.rootView.arrayPictures[indexItem].characterName = item[@"name"];
-        self.rootView.arrayPictures[indexItem].image = [UIImage imageWithData:[self.networkService downloadCharacterImage:item[@"image"]]];
-        indexItem++;
-    }
-    NSInteger indexSearchPicture = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
-    self.rootView.questionLabel.text = self.rootView.arrayPictures[indexSearchPicture].characterName;
-    [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [self.rootView installFinishFrame];
-    } completion: nil];
-}
-
 
 - (void)showAlert:(NSString *)textAlert
 {

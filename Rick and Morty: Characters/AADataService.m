@@ -20,7 +20,7 @@
 static const NSInteger AANumberOfCharactersInsidePage = 20;
 
 
-@interface AADataService() <AANetworkServiceOutputProtocol>
+@interface AADataService()
 
 @property (nonatomic, nonnull, strong) AANetworkService *networkService;
 @property (nonatomic, assign) NSInteger pageNumber;
@@ -39,7 +39,6 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
     if (self)
     {
         _networkService = [AANetworkService new];
-        _networkService.output = self;
         _pageNumber = 1;
     }
     return self;
@@ -55,7 +54,33 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
                                         [AACharacter fetchRequest] error:&error];
     if (arrayCharactersFromCoreData.count == 0)
     {
-        [self.networkService downloadCharactersInfo:self.pageNumber];
+		[self.networkService downloadCharactersInfoForPage:self.pageNumber completionHandler:^(NSData * _Nullable pageData) {
+			if (!pageData)
+			{
+				[self.output showAlert:@"No internet connection"];
+				return;
+			}
+			NSDictionary *temp = [NSJSONSerialization JSONObjectWithData:pageData options:kNilOptions error:nil];
+			NSArray *arrayCharacterInfo = temp[@"results"];
+			for (NSDictionary *item in arrayCharacterInfo)
+			{
+				AACharacter *newCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"AACharacter"
+																		  inManagedObjectContext:self.coreDataContext];
+				newCharacter.name = item[@"name"];
+				newCharacter.status = item[@"status"];
+				newCharacter.species = item[@"species"];
+				newCharacter.type = item[@"type"];
+				newCharacter.gender = item[@"gender"];
+				newCharacter.origin = item[@"origin"][@"name"];
+				newCharacter.location = item[@"location"][@"name"];
+				newCharacter.imageUrlString = item[@"image"];
+				NSNumber *identifier = item[@"id"];
+				newCharacter.identifier = [identifier integerValue];
+				NSError *error = nil;
+				[newCharacter.managedObjectContext save:&error];
+			}
+			[self getCharactersInfo];
+		}];
     }
     else
     {
@@ -66,13 +91,12 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
 
 - (void)getCharactersInfoFromCoreData:(NSArray<AACharacter *> *)arrayCharactersFromCoreData
 {
-    BOOL isInternetConnection = [self.networkService checkInternetConnection];
+    BOOL isInternetConnection = [self.networkService isInternetConnectionAvailable];
     if (!isInternetConnection)
     {
         [self.output showAlert:@"No internet connection"];
     }
-    dispatch_queue_t concurrentQueueForDownloadImages = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_group_t groupForDownloadImages = dispatch_group_create();
+    dispatch_group_t group = dispatch_group_create();
     NSMutableArray<AACharacterModel *> *resultArrayInfo = [NSMutableArray new];
     
     for (AACharacter *character in arrayCharactersFromCoreData)
@@ -84,59 +108,30 @@ static const NSInteger AANumberOfCharactersInsidePage = 20;
         newCharacter.type = character.type;
         newCharacter.gender = character.gender;
         newCharacter.origin = character.origin;
-        newCharacter.location = character.location;
-        newCharacter.imageUrlString = character.imageUrlString;
-        newCharacter.identifier = character.identifier;
-        dispatch_group_async(groupForDownloadImages, concurrentQueueForDownloadImages, ^{
-            if (isInternetConnection)
-            {
-                newCharacter.image = [UIImage imageWithData:[self.networkService
-                                                             downloadCharacterImage:character.imageUrlString]];
-            }
-            else
-            {
-                newCharacter.image = nil;
-            }
-        });
-        [resultArrayInfo addObject:newCharacter];
+		newCharacter.location = character.location;
+		newCharacter.imageUrlString = character.imageUrlString;
+		newCharacter.identifier = character.identifier;
+		if (isInternetConnection)
+		{
+			dispatch_group_enter(group);
+			[self.networkService downloadCharacterImage:character.imageUrlString completionHandler:^(NSData * _Nullable imageData) {
+				newCharacter.image = [UIImage imageWithData:imageData];
+				dispatch_group_leave(group);
+			}];
+
+		}
+		else
+		{
+			newCharacter.image = nil;
+		}
+		[resultArrayInfo addObject:newCharacter];
     }
-    dispatch_group_notify(groupForDownloadImages, dispatch_get_main_queue(), ^{
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         self.pageNumber++;
         [self.output addNewPage:resultArrayInfo];
     });
 }
 
-
-#pragma mark - AADataServiceInputProtocol
-
-- (void)downloadNewPage:(NSData *)charactersInfo
-{
-    if (!charactersInfo)
-    {
-        [self.output showAlert:@"No internet connection"];
-        return;
-    }
-    NSDictionary *temp = [NSJSONSerialization JSONObjectWithData:charactersInfo options:kNilOptions error:nil];
-    NSArray *arrayCharacterInfo = temp[@"results"];
-    for (NSDictionary *item in arrayCharacterInfo)
-    {
-        AACharacter *newCharacter = [NSEntityDescription insertNewObjectForEntityForName:@"AACharacter"
-                                                                  inManagedObjectContext:self.coreDataContext];
-        newCharacter.name = item[@"name"];
-        newCharacter.status = item[@"status"];
-        newCharacter.species = item[@"species"];
-        newCharacter.type = item[@"type"];
-        newCharacter.gender = item[@"gender"];
-        newCharacter.origin = item[@"origin"][@"name"];
-        newCharacter.location = item[@"location"][@"name"];
-        newCharacter.imageUrlString = item[@"image"];
-        NSNumber *identifier = item[@"id"];
-        newCharacter.identifier = [identifier integerValue];
-        NSError *error = nil;
-        [newCharacter.managedObjectContext save:&error];
-    }
-    [self getCharactersInfo];
-}
 
 
 #pragma mark - Property getters

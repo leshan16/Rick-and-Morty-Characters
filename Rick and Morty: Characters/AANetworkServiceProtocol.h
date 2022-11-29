@@ -6,55 +6,50 @@
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-/**
- Протокол обработки данных, полученных из сети или из кор даты
- */
-@protocol AANetworkServiceOutputProtocol <NSObject>
 
-/**
- Метод обрабатывает данные, полученные из сети
+@import Foundation;
 
- @param charactersInfo Данные персонажа
- */
-- (void)downloadNewPage:(nullable NSData *)charactersInfo;
 
-@end
+NS_ASSUME_NONNULL_BEGIN
 
 
 /**
  Протокол отправки запроса в сеть и получение данных из сети
  */
-@protocol AANetworkServiceIntputProtocol <NSObject>
+@protocol AANetworkServiceProtocol <NSObject>
 
 /**
- Метод отправляет запрос в сеть для конкретной странницы данных ресурса
+ Метод отправляет запрос в сеть для получения странницы персонажей
 
  @param page Страница для загрузки
+ @param completionHandler Замыкание с результатом выполнения запроса
  */
-- (void)downloadCharactersInfo:(NSInteger)page;
+- (void)downloadCharactersInfoForPage:(NSInteger)page completionHandler:(void (^)(NSData * _Nullable))completionHandler;
 
 /**
-  Метод отправляет запрос в сеть для конкретных персонажей по их идентификаторам
+  Метод отправляет запрос в сеть для получения персонажей по их идентификаторам
 
  @param arraySearchID Идентификаторы персонажей
+ @param completionHandler Замыкание с результатом выполнения запроса
  */
-- (void)downloadCharactersInfoForGame:(nullable NSArray<NSNumber *> *)arraySearchID;
+- (void)downloadCharactersInfoForIds:(NSArray<NSNumber *> *)arraySearchID completionHandler:(void (^)(NSData * _Nullable))completionHandler;
 
 /**
- Метод отправляет запрос в сеть по конкретному URL и возвращает полученные данные
+ Метод отправляет запрос в сеть для получения изображения персонажа
 
  @param urlStringImage Строка URL
- @return Данные из сети
+ @param completionHandler Замыкание с результатом выполнения запроса
  */
-- (nullable NSData *)downloadCharacterImage:(nullable NSString *)urlStringImage;
-
+- (void)downloadCharacterImage:(nullable NSString *)urlStringImage completionHandler:(void (^)(NSData * _Nullable))completionHandler;
 
 /**
  Метод проверяет текущее состояние интернет соединения
 
  @return Cостояние интернет соединения
  */
-- (BOOL)checkInternetConnection;
+- (BOOL)isInternetConnectionAvailable;
 
 @end
 
+
+NS_ASSUME_NONNULL_END
