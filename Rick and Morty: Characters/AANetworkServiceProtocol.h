@@ -6,7 +6,6 @@
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-
 @import Foundation;
 
 
@@ -41,13 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param completionHandler Замыкание с результатом выполнения запроса
  */
 - (void)downloadCharacterImage:(nullable NSString *)urlStringImage completionHandler:(void (^)(NSData * _Nullable))completionHandler;
-
-/**
- Метод проверяет текущее состояние интернет соединения
-
- @return Cостояние интернет соединения
- */
-- (BOOL)isInternetConnectionAvailable;
 
 @end
 

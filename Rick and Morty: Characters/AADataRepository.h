@@ -1,13 +1,12 @@
 //
-//  AADataService.h
+//  AADataRepository.h
 //  Rick and Morty: Characters
 //
 //  Created by Алексей Апестин on 04.05.19.
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "AADataServiceProtocol.h"
+#import "AADataRepositoryProtocol.h"
 
 
 /**
@@ -15,8 +14,8 @@
  нее, если их нет, то обращается к нетворк сервису за получением данных из сети. Обрабатывает данные из сети и отправляет 
  их контроллеру.
  */
-@interface AADataService : NSObject <AADataServiceInputProtocol>
+@interface AADataRepository : NSObject <AADataRepositoryInputProtocol>
 
-@property (nonatomic, nullable, weak) id<AADataServiceOutputProtocol> output; /**< Делегат внешних событий */
+@property (nonatomic, nullable, weak) id<AADataRepositoryOutputProtocol> output; /**< Делегат внешних событий */
 
 @end

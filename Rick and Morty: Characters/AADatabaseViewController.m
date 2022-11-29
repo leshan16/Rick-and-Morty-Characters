@@ -7,7 +7,7 @@
 //
 
 #import "AADatabaseViewController.h"
-#import "AADataService.h"
+#import "AADataRepository.h"
 #import "AADatabaseDetailViewController.h"
 #import "AADatabaseCollectionViewCell.h"
 #import "AACharacterModel.h"
@@ -16,13 +16,14 @@ static const CGFloat AACellSpacing = 1.0;
 static const NSInteger AANumberOfCharactersInTotal = 493;
 
 
-@interface AADatabaseViewController () <AADataServiceOutputProtocol, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface AADatabaseViewController () <AADataRepositoryOutputProtocol, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, nullable, strong) UILabel *titleLabel;
 @property (nonatomic, nullable, strong) UICollectionView *collectionView;
-@property (nonatomic, nullable, strong) AADataService *dataService;
+@property (nonatomic, nullable, strong) AADataRepository *dataRepository;
 @property (nonatomic, nullable, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, nullable, strong) NSMutableArray<AACharacterModel *> *arrayCharacters;
+@property (nonatomic, assign) NSInteger pageNumber;
 
 @end
 
@@ -74,29 +75,28 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
     [self.activityIndicator startAnimating];
     
     self.arrayCharacters = [NSMutableArray new];
-    self.dataService = [AADataService new];
-    self.dataService.output = self;
-    [self.dataService getCharactersInfo];
+    self.dataRepository = [AADataRepository new];
+    self.dataRepository.output = self;
+	self.pageNumber = 1;
+    [self.dataRepository getCharactersInfoForPage:self.pageNumber];
 }
 
 
 #pragma mark - AADataServiceOutputProtocol
 
-- (void)addNewPage:(NSMutableArray *)charactersInfo
+- (void)didLoadPageWithCharactersInfo:(NSArray<AACharacterModel *> *)charactersInfo
 {
-    for (AACharacterModel *character in charactersInfo)
-    {
-        [self.arrayCharacters addObject:character];
-    }
-    [self.activityIndicator stopAnimating];
+	[self.arrayCharacters addObjectsFromArray:charactersInfo];
     [self.collectionView reloadData];
+	[self.activityIndicator stopAnimating];
+	self.pageNumber++;
 }
 
 
-- (void)showAlert:(NSString *)textAlert
+- (void)didRecieveErrorWithDescription:(NSString *)description
 {
     [self.activityIndicator stopAnimating];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:textAlert
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning" message:description
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:actionOk];
@@ -109,10 +109,12 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row >= self.arrayCharacters.count - 1 && self.arrayCharacters.count <= AANumberOfCharactersInTotal)
+    if (indexPath.row >= self.arrayCharacters.count - 1 &&
+		self.arrayCharacters.count <= AANumberOfCharactersInTotal &&
+		!self.activityIndicator.isAnimating)
     {
         [self.activityIndicator startAnimating];
-        [self.dataService getCharactersInfo];
+        [self.dataRepository getCharactersInfoForPage:self.pageNumber];
     }
 }
 

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataService.m */; };
+		C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = C74BFB1F29367FF80053DA41 /* AACoreDataService.m */; };
+		CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataRepository.m */; };
 		CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */; };
 		CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */; };
 		CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */; };
@@ -48,9 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB18CD3B227DEF3700F92C2F /* AADataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataService.h; sourceTree = "<group>"; };
-		CB18CD3C227DEF3700F92C2F /* AADataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataService.m; sourceTree = "<group>"; };
-		CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADataServiceProtocol.h; sourceTree = "<group>"; };
+		C74BFB1E29367FF80053DA41 /* AACoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataService.h; sourceTree = "<group>"; };
+		C74BFB1F29367FF80053DA41 /* AACoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACoreDataService.m; sourceTree = "<group>"; };
+		C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataServiceProtocol.h; sourceTree = "<group>"; };
+		CB18CD3B227DEF3700F92C2F /* AADataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataRepository.h; sourceTree = "<group>"; };
+		CB18CD3C227DEF3700F92C2F /* AADataRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataRepository.m; sourceTree = "<group>"; };
+		CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADataRepositoryProtocol.h; sourceTree = "<group>"; };
 		CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AACharacter+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AACharacter+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -254,9 +258,9 @@
 		F8F4F87A26C6D19F00A24636 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */,
-				CB18CD3B227DEF3700F92C2F /* AADataService.h */,
-				CB18CD3C227DEF3700F92C2F /* AADataService.m */,
+				CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */,
+				CB18CD3B227DEF3700F92C2F /* AADataRepository.h */,
+				CB18CD3C227DEF3700F92C2F /* AADataRepository.m */,
 				CBD555792275F98000482512 /* AACharacterModel.h */,
 				CBD5557A2275F98000482512 /* AACharacterModel.m */,
 				CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */,
@@ -273,6 +277,9 @@
 				CBD555802275FD8B00482512 /* AANetworkServiceProtocol.h */,
 				CBD5557D2275FC7400482512 /* AANetworkService.h */,
 				CBD5557E2275FC7400482512 /* AANetworkService.m */,
+				C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */,
+				C74BFB1E29367FF80053DA41 /* AACoreDataService.h */,
+				C74BFB1F29367FF80053DA41 /* AACoreDataService.m */,
 			);
 			name = ServiceLayer;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */,
+				C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */,
 				CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */,
 				CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */,
 				CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */,
@@ -421,7 +429,7 @@
 				CBB568372270C71500FF5031 /* AppDelegate.m in Sources */,
 				CBD5557B2275F98000482512 /* AACharacterModel.m in Sources */,
 				CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */,
-				CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */,
+				CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */,
 				CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */,
 				CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */,
 				CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */,
