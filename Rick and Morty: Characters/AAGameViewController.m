@@ -8,7 +8,7 @@
 
 #import "AAGameViewController.h"
 #import "AANetworkService.h"
-#import "AAGameRandomNumbers.h"
+#import "AAGameNumberGenerator.h"
 #import "AAGameRootView.h"
 
 
@@ -16,12 +16,24 @@
 
 @property (nonatomic, nullable, strong) AAGameRootView *rootView;
 @property (nonatomic, assign) NSInteger score;
-@property (nonatomic, nullable, strong) AANetworkService *networkService;
+@property (nonatomic, nullable, strong) id<AANetworkServiceProtocol> networkService;
+@property (nonatomic, nullable, strong) id<AAGameNumberGeneratorProtocol> numberGenerator;
 
 @end
 
 
 @implementation AAGameViewController
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self)
+	{
+		_networkService = [AANetworkService new];
+		_numberGenerator = [AAGameNumberGenerator new];
+	}
+	return self;
+}
 
 - (void)viewDidLoad
 {
@@ -42,7 +54,6 @@
     [self.rootView installStartFrame];
     [self.view addSubview:self.rootView];
     self.score = 0;
-    self.networkService = [AANetworkService new];
     [self getNewQuestion];
 }
 
@@ -51,7 +62,7 @@
 
 - (void)getNewQuestion
 {
-    NSArray<NSNumber *> *arraySearchID = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:[NSDate date]];
+    NSArray<NSNumber *> *arraySearchID = [self.numberGenerator getRandomFourNumbers1to493FromDate:[NSDate date]];
     [self.rootView.activityIndicator startAnimating];
 	[self.networkService downloadCharactersInfoForIds:arraySearchID completionHandler:^(NSData * _Nullable charactersData) {
 		[self.rootView.activityIndicator stopAnimating];
@@ -77,7 +88,7 @@
 			indexItem++;
 		}
 		dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-			NSInteger indexSearchPicture = [AAGameRandomNumbers getRandomNumberFrom0to3:[NSDate date]];
+			NSInteger indexSearchPicture = [self.numberGenerator getRandomNumber0to3FromDate:[NSDate date]];
 			self.rootView.questionLabel.text = self.rootView.arrayPictures[indexSearchPicture].characterName;
 			[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 				[self.rootView installFinishFrame];

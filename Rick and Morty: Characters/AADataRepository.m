@@ -52,29 +52,14 @@
 			[self.output didRecieveErrorWithDescription:@"No internet connection"];
 			return;
 		}
-		NSDictionary *result = [NSJSONSerialization JSONObjectWithData:pageData options:kNilOptions error:nil];
-		NSArray *arrayCharacterInfo = result[@"results"];
-		NSMutableArray<AACharacterModel *> *characterModels = [NSMutableArray new];
-
-		for (NSDictionary *item in arrayCharacterInfo)
-		{
-			AACharacterModel *newCharacter = [AACharacterModel new];
-			newCharacter.name = item[@"name"];
-			newCharacter.status = item[@"status"];
-			newCharacter.species = item[@"species"];
-			newCharacter.type = item[@"type"];
-			newCharacter.gender = item[@"gender"];
-			newCharacter.origin = item[@"origin"][@"name"];
-			newCharacter.location = item[@"location"][@"name"];
-			newCharacter.imageUrlString = item[@"image"];
-			NSNumber *identifier = item[@"id"];
-			newCharacter.identifier = [identifier integerValue];
-			[characterModels addObject:newCharacter];
-		}
-		[self.coreDataService saveCharactersInfo:[characterModels copy]];
+		NSArray<AACharacterModel *> *characterModels = [self makeCharacterModelsFromData:pageData];
+		[self.coreDataService saveCharactersInfo:characterModels];
 		[self presentCharactersInfo:characterModels];
 	}];
 }
+
+
+#pragma mark - Private
 
 - (void)presentCharactersInfo:(NSArray<AACharacterModel *> *)characters
 {
@@ -92,6 +77,31 @@
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [self.output didLoadPageWithCharactersInfo:characters];
     });
+}
+
+- (NSArray<AACharacterModel *> *)makeCharacterModelsFromData:(NSData *)data
+{
+	NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+	NSArray *arrayCharacterInfo = result[@"results"];
+	NSMutableArray<AACharacterModel *> *characterModels = [NSMutableArray new];
+
+	for (NSDictionary *item in arrayCharacterInfo)
+	{
+		AACharacterModel *newCharacter = [AACharacterModel new];
+		newCharacter.name = item[@"name"];
+		newCharacter.status = item[@"status"];
+		newCharacter.species = item[@"species"];
+		newCharacter.type = item[@"type"];
+		newCharacter.gender = item[@"gender"];
+		newCharacter.origin = item[@"origin"][@"name"];
+		newCharacter.location = item[@"location"][@"name"];
+		newCharacter.imageUrlString = item[@"image"];
+		NSNumber *identifier = item[@"id"];
+		newCharacter.identifier = [identifier integerValue];
+		[characterModels addObject:newCharacter];
+	}
+
+	return [characterModels copy];
 }
 
 

@@ -1,23 +1,25 @@
 //
-//  AAGameRandomNumbers.m
+//  AAGameNumberGenerator.m
 //  Rick and Morty: Characters
 //
 //  Created by Алексей Апестин on 10.05.19.
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import "AAGameRandomNumbers.h"
+#import "AAGameNumberGenerator.h"
 
 
-@implementation AAGameRandomNumbers
+@implementation AAGameNumberGenerator
 
-+ (NSInteger)getRandomNumberFrom0to3:(NSDate *)currentDate
+
+#pragma mark - AAGameNumberGeneratorProtocol
+
+- (NSInteger)getRandomNumber0to3FromDate:(nullable NSDate *)currentDate
 {
     return [[self getDateComponents:currentDate] second] % 4;
 }
 
-
-+ (NSArray<NSNumber *> *)getRandomFourNumbersFrom1to493:(NSDate *)currentDate
+- (NSArray<NSNumber *> *)getRandomFourNumbers1to493FromDate:(nullable NSDate *)currentDate
 {
     NSDateComponents *dateComponents = [self getDateComponents:currentDate];
     
@@ -42,7 +44,9 @@
 }
 
 
-+ (NSDateComponents *)getDateComponents:(nullable NSDate *)currentDate
+#pragma mark - Private
+
+- (NSDateComponents *)getDateComponents:(nullable NSDate *)currentDate
 {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [gregorian components:(NSCalendarUnitHour  | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:currentDate];

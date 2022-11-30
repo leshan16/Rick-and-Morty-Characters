@@ -1,42 +1,57 @@
 //
-//  Rick_and_Morty__CharactersTests.m
+//  AAGameNumberGeneratorTests.m
 //  Rick and Morty: CharactersTests
 //
 //  Created by Алексей Апестин on 24.04.19.
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-#import "AAGameRandomNumbers.h"
+@import XCTest;
+#import "AAGameNumberGenerator.h"
 
-@interface AAGameRandomNumbersTests : XCTestCase
+
+@interface AAGameNumberGeneratorTests : XCTestCase
+
+@property (nonatomic, nullable, strong) AAGameNumberGenerator *sut;
 
 @end
 
-@implementation AAGameRandomNumbersTests
+@implementation AAGameNumberGeneratorTests
 
 - (void)setUp
 {
     [super setUp];
+	self.sut = [AAGameNumberGenerator new];
 }
 
 - (void)tearDown
 {
+	self.sut = nil;
     [super tearDown];
 }
 
 - (void)testRandomNumberFrom0to3
 {
+	// Arrange
     NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:7];
-    NSInteger result = [AAGameRandomNumbers getRandomNumberFrom0to3:testDate];
-    XCTAssertEqual(result, 1);
+
+	// Act
+    NSInteger result = [self.sut getRandomNumber0to3FromDate:testDate];
+
+	// Assert
+    XCTAssertEqual(result, 3);
 }
 
 
 - (void)testRandomFourNumbersFrom1to493
 {
+	// Arrange
     NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:492];
-    NSArray<NSNumber *> *result = [AAGameRandomNumbers getRandomFourNumbersFrom1to493:testDate];
+
+	// Act
+    NSArray<NSNumber *> *result = [self.sut getRandomFourNumbers1to493FromDate:testDate];
+
+	// Assert
     XCTAssertEqual(result.count, 4);
     XCTAssertEqual([result[0] integerValue], 469);
     XCTAssertEqual([result[1] integerValue], 482);

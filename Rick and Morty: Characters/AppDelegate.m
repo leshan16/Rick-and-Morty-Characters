@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AAGameViewController.h"
-#import "AADatabaseViewController.h"
+#import "AAMainViewController.h"
 
 
 @interface AppDelegate ()
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	AADatabaseViewController *databaseViewController = [AADatabaseViewController new];
+	AAMainViewController *databaseViewController = [AAMainViewController new];
 	databaseViewController.tabBarItem.title = @"Database";
 	databaseViewController.tabBarItem.image = [UIImage imageNamed:@"Database"];
 	UINavigationController *navigationController = [[UINavigationController alloc]

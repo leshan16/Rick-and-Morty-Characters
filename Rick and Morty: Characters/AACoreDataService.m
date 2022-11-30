@@ -8,7 +8,7 @@
 
 #import "AACoreDataService.h"
 #import "AACharacterModel.h"
-#import "AACharacter+CoreDataClass.h"
+#import "AACharacter+CoreDataProperties.h"
 @import CoreData;
 
 
