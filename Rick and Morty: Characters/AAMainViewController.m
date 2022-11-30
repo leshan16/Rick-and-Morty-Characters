@@ -8,7 +8,7 @@
 
 #import "AAMainViewController.h"
 #import "AADataRepository.h"
-#import "AADatabaseDetailViewController.h"
+#import "AADetailViewController.h"
 #import "AAMainCollectionViewCell.h"
 #import "AACharacterModel.h"
 
@@ -135,8 +135,9 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    AADatabaseDetailViewController *detailViewController = [AADatabaseDetailViewController new];
+	AADetailViewController *detailViewController = [AADetailViewController new];
     detailViewController.characterInfo = self.characters[indexPath.row];
+	detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

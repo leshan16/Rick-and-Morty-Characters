@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7033F652937B9F20058EA45 /* AADetailTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */; };
 		C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = C74BFB1F29367FF80053DA41 /* AACoreDataService.m */; };
 		CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataRepository.m */; };
 		CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */; };
 		CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */; };
-		CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */; };
-		CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */; };
+		CB249B602276E75F00C2C84B /* AADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADetailViewController.m */; };
+		CB249B6C2276F02E00C2C84B /* AADetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */; };
 		CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7522774BA300C2C84B /* AAGamePicture.m */; };
 		CB52924822857EA1008A8728 /* AAGameNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */; };
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
@@ -50,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		C7033F62293788D70058EA45 /* AAGameNumberGeneratorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameNumberGeneratorProtocol.h; sourceTree = "<group>"; };
+		C7033F632937B9F20058EA45 /* AADetailTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADetailTableViewModel.h; sourceTree = "<group>"; };
+		C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AADetailTableViewModel.m; sourceTree = "<group>"; };
 		C74BFB1E29367FF80053DA41 /* AACoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataService.h; sourceTree = "<group>"; };
 		C74BFB1F29367FF80053DA41 /* AACoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACoreDataService.m; sourceTree = "<group>"; };
 		C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataServiceProtocol.h; sourceTree = "<group>"; };
@@ -60,10 +63,10 @@
 		CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AACharacter+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataProperties.m"; sourceTree = "<group>"; };
-		CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailViewController.h; sourceTree = "<group>"; };
-		CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailViewController.m; sourceTree = "<group>"; };
-		CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailTableViewCell.h; sourceTree = "<group>"; };
-		CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailTableViewCell.m; sourceTree = "<group>"; };
+		CB249B5E2276E75F00C2C84B /* AADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADetailViewController.h; sourceTree = "<group>"; };
+		CB249B5F2276E75F00C2C84B /* AADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADetailViewController.m; sourceTree = "<group>"; };
+		CB249B6A2276F02E00C2C84B /* AADetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADetailTableViewCell.h; sourceTree = "<group>"; };
+		CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADetailTableViewCell.m; sourceTree = "<group>"; };
 		CB249B7422774BA300C2C84B /* AAGamePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGamePicture.h; sourceTree = "<group>"; };
 		CB249B7522774BA300C2C84B /* AAGamePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGamePicture.m; sourceTree = "<group>"; };
 		CB52924622857EA1008A8728 /* AAGameNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameNumberGenerator.h; sourceTree = "<group>"; };
@@ -139,15 +142,17 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		CB249B5D2276E6CE00C2C84B /* DatabaseDetail */ = {
+		CB249B5D2276E6CE00C2C84B /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */,
-				CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */,
-				CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */,
-				CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */,
+				CB249B5E2276E75F00C2C84B /* AADetailViewController.h */,
+				CB249B5F2276E75F00C2C84B /* AADetailViewController.m */,
+				CB249B6A2276F02E00C2C84B /* AADetailTableViewCell.h */,
+				CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */,
+				C7033F632937B9F20058EA45 /* AADetailTableViewModel.h */,
+				C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */,
 			);
-			name = DatabaseDetail;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		CB72E0AF228C7B4000DE8126 /* Frameworks */ = {
@@ -254,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD5556B2275D76D00482512 /* Main */,
-				CB249B5D2276E6CE00C2C84B /* DatabaseDetail */,
+				CB249B5D2276E6CE00C2C84B /* Detail */,
 				CBD5556A2275D74400482512 /* Game */,
 			);
 			name = PresentationLayer;
@@ -430,6 +435,7 @@
 			files = (
 				CBD555772275DB2200482512 /* AAMainCollectionViewCell.m in Sources */,
 				C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */,
+				C7033F652937B9F20058EA45 /* AADetailTableViewModel.m in Sources */,
 				CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */,
 				CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */,
 				CB52924822857EA1008A8728 /* AAGameNumberGenerator.m in Sources */,
@@ -437,14 +443,14 @@
 				CBD5557F2275FC7400482512 /* AANetworkService.m in Sources */,
 				CBB568372270C71500FF5031 /* AppDelegate.m in Sources */,
 				CBD5557B2275F98000482512 /* AACharacterModel.m in Sources */,
-				CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */,
+				CB249B6C2276F02E00C2C84B /* AADetailTableViewCell.m in Sources */,
 				CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */,
 				CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */,
 				CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */,
 				CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */,
 				CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */,
 				CBB568342270C71500FF5031 /* main.m in Sources */,
-				CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */,
+				CB249B602276E75F00C2C84B /* AADetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
