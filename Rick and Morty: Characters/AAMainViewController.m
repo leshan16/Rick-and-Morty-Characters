@@ -100,7 +100,7 @@ static const NSInteger AANumberOfCharactersInTotal = 493;
 
 #pragma mark - AADataRepositoryOutputProtocol
 
-- (void)didLoadPageWithCharactersInfo:(NSArray<AACharacterModel *> *)charactersInfo
+- (void)didLoadCharactersInfo:(NSArray<AACharacterModel *> *)charactersInfo
 {
 	[self.characters addObjectsFromArray:charactersInfo];
     [self.collectionView reloadData];

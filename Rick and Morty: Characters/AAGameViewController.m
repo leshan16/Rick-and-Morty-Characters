@@ -7,17 +7,20 @@
 //
 
 #import "AAGameViewController.h"
-#import "AANetworkService.h"
+#import "AADataRepository.h"
 #import "AAGameNumberGenerator.h"
 #import "AAGameRootView.h"
+#import "AACharacterModel.h"
+#import "AAGameRootViewOutputProtocol.h"
 
 
-@interface AAGameViewController () <AAGamePictureProtocol>
+@interface AAGameViewController () <AAGameRootViewOutputProtocol, AADataRepositoryOutputProtocol>
 
 @property (nonatomic, nullable, strong) AAGameRootView *rootView;
-@property (nonatomic, assign) NSInteger score;
-@property (nonatomic, nullable, strong) id<AANetworkServiceProtocol> networkService;
+@property (nonatomic, nullable, strong) AADataRepository *dataRepository;
 @property (nonatomic, nullable, strong) id<AAGameNumberGeneratorProtocol> numberGenerator;
+@property (nonatomic, assign) NSInteger score;
+@property (nonatomic, nullable, strong) NSArray<AACharacterModel *> *characters;
 
 @end
 
@@ -29,8 +32,10 @@
 	self = [super init];
 	if (self)
 	{
-		_networkService = [AANetworkService new];
+		_dataRepository = [AADataRepository new];
+		_dataRepository.output = self;
 		_numberGenerator = [AAGameNumberGenerator new];
+		_score = 0;
 	}
 	return self;
 }
@@ -39,6 +44,7 @@
 {
     [super viewDidLoad];
     [self prepareUI];
+	[self getNewQuestion];
 }
 
 
@@ -48,13 +54,10 @@
 {
     self.rootView = [[AAGameRootView alloc] initWithFrame:self.view.frame];
     self.rootView.output = self;
-    NSString *textScore = [NSString stringWithFormat:@"Best: %ld", (long)[[NSUserDefaults standardUserDefaults]
-                                                                          integerForKey:@"BestScore"]];
+	NSString *textScore = [NSString stringWithFormat:@"Best: %ld", [[NSUserDefaults standardUserDefaults] integerForKey:@"BestScore"]];
     self.rootView.bestScoreLabel.text = textScore;
     [self.rootView installStartFrame];
     [self.view addSubview:self.rootView];
-    self.score = 0;
-    [self getNewQuestion];
 }
 
 
@@ -64,37 +67,7 @@
 {
     NSArray<NSNumber *> *arraySearchID = [self.numberGenerator getRandomFourNumbers1to493FromDate:[NSDate date]];
     [self.rootView.activityIndicator startAnimating];
-	[self.networkService downloadCharactersInfoForIds:arraySearchID completionHandler:^(NSData * _Nullable charactersData) {
-		[self.rootView.activityIndicator stopAnimating];
-		if (!charactersData)
-		{
-			[self showAlert:@"No internet connection"];
-			return;
-		}
-		NSArray *arrayCharacterInfo = [NSJSONSerialization JSONObjectWithData:charactersData options:kNilOptions error:nil];
-		NSInteger indexItem = 0;
-		dispatch_group_t group = dispatch_group_create();
-		for (NSDictionary *item in arrayCharacterInfo)
-		{
-			self.rootView.arrayPictures[indexItem].characterName = item[@"name"];
-			dispatch_group_enter(group);
-			[self.networkService downloadCharacterImage:item[@"image"] completionHandler:^(NSData * _Nullable imageData) {
-				if (imageData)
-				{
-					self.rootView.arrayPictures[indexItem].image = [UIImage imageWithData:imageData];
-				}
-				dispatch_group_leave(group);
-			}];
-			indexItem++;
-		}
-		dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-			NSInteger indexSearchPicture = [self.numberGenerator getRandomNumber0to3FromDate:[NSDate date]];
-			self.rootView.questionLabel.text = self.rootView.arrayPictures[indexSearchPicture].characterName;
-			[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-				[self.rootView installFinishFrame];
-			} completion: nil];
-		});
-	}];
+	[self.dataRepository getCharactersInfoForIds:arraySearchID];
 }
 
 - (void)showAlert:(NSString *)textAlert
@@ -109,11 +82,12 @@
 
 #pragma mark - AAGamePictureProtocol
 
-- (void)pictureSelected:(AAGamePicture *)picture
+- (void)pictureSelected:(NSInteger)selectedIndex
 {
+	NSInteger indexItem = 0;
     for (AAGamePicture *gamePicture in self.rootView.arrayPictures)
     {
-        if ([gamePicture.characterName isEqualToString:self.rootView.questionLabel.text])
+        if ([self.characters[indexItem].name isEqualToString:self.rootView.questionLabel.text])
         {
             gamePicture.layer.borderColor = UIColor.greenColor.CGColor;
         }
@@ -121,26 +95,60 @@
         {
             gamePicture.layer.borderColor = UIColor.redColor.CGColor;
         }
+		indexItem++;
     }
-    if ([picture.characterName isEqualToString:self.rootView.questionLabel.text])
+
+    if (selectedIndex < self.characters.count && [self.characters[selectedIndex].name isEqualToString:self.rootView.questionLabel.text])
     {
         self.score++;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if (self.score > [defaults integerForKey:@"BestScore"])
         {
             [defaults setInteger:self.score forKey:@"BestScore"];
-            self.rootView.bestScoreLabel.text = [NSString stringWithFormat:@"Best: %ld", (long)self.score];
+            self.rootView.bestScoreLabel.text = [NSString stringWithFormat:@"Best: %ld", self.score];
         }
     }
     else
     {
         self.score = 0;
     }
-    self.rootView.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.score];
+    self.rootView.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", self.score];
     [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self.rootView installStartFrame];
     } completion:nil];
     [self getNewQuestion];
+}
+
+
+#pragma mark - AADataRepositoryOutputProtocol
+
+- (void)didRecieveErrorWithDescription:(nullable NSString *)description
+{
+	[self showAlert:description];
+}
+
+- (void)didLoadCharactersInfo:(nullable NSArray<AACharacterModel *> *)charactersInfo
+{
+	[self.rootView.activityIndicator stopAnimating];
+	if (charactersInfo.count != 4)
+	{
+		[self showAlert:@"No internet connection"];
+		return;
+	}
+	NSInteger indexItem = 0;
+	self.characters = charactersInfo;
+
+	for (AACharacterModel *item in charactersInfo)
+	{
+		self.rootView.arrayPictures[indexItem].image = item.image;
+		indexItem++;
+	}
+
+	NSInteger indexSearchPicture = [self.numberGenerator getRandomNumber0to3FromDate:[NSDate date]];
+	self.rootView.questionLabel.text = charactersInfo[indexSearchPicture].name;
+	[UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+		[self.rootView installFinishFrame];
+	} completion: nil];
 }
 
 @end

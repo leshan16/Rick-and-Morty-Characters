@@ -73,7 +73,7 @@
 		CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameNumberGenerator.m; sourceTree = "<group>"; };
 		CB52924A2285888A008A8728 /* AAGameRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRootView.h; sourceTree = "<group>"; };
 		CB52924B2285888A008A8728 /* AAGameRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameRootView.m; sourceTree = "<group>"; };
-		CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewProtocol.h; sourceTree = "<group>"; };
+		CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewInputProtocol.h; sourceTree = "<group>"; };
 		CB72E0B0228C7B4100DE8126 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		CBB5682F2270C71500FF5031 /* Rick and Morty: Characters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty: Characters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB568332270C71500FF5031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		CBB568692270F2B100FF5031 /* AAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMainViewController.m; sourceTree = "<group>"; };
 		CBB5686E2270F2E000FF5031 /* AAGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameViewController.h; sourceTree = "<group>"; };
 		CBB5686F2270F2E000FF5031 /* AAGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameViewController.m; sourceTree = "<group>"; };
-		CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGamePictureProtocol.h; sourceTree = "<group>"; };
+		CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewOutputProtocol.h; sourceTree = "<group>"; };
 		CBD555752275DB2200482512 /* AAMainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMainCollectionViewCell.h; sourceTree = "<group>"; };
 		CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMainCollectionViewCell.m; sourceTree = "<group>"; };
 		CBD555792275F98000482512 /* AACharacterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACharacterModel.h; sourceTree = "<group>"; };
@@ -232,10 +232,10 @@
 		CBD5556A2275D74400482512 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */,
+				CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */,
+				CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */,
 				CB52924A2285888A008A8728 /* AAGameRootView.h */,
 				CB52924B2285888A008A8728 /* AAGameRootView.m */,
-				CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */,
 				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
 				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
 				CBB5686E2270F2E000FF5031 /* AAGameViewController.h */,

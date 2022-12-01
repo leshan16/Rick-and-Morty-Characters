@@ -22,16 +22,8 @@
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius  = CGRectGetHeight(frame) / 4;
         self.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapOnOverImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureSelected)];
-        [self addGestureRecognizer:tapOnOverImage];
     }
     return self;
-}
-
-
-- (void)pictureSelected
-{
-    [self.output pictureSelected:self];
 }
 
 @end

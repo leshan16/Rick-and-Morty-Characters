@@ -52,8 +52,23 @@
 			[self.output didRecieveErrorWithDescription:@"No internet connection"];
 			return;
 		}
-		NSArray<AACharacterModel *> *characterModels = [self makeCharacterModelsFromData:pageData];
+		NSDictionary *result = [NSJSONSerialization JSONObjectWithData:pageData options:kNilOptions error:nil];
+		NSArray<AACharacterModel *> *characterModels = [self makeCharacterModelsFromJSON:result[@"results"]];
 		[self.coreDataService saveCharactersInfo:characterModels];
+		[self presentCharactersInfo:characterModels];
+	}];
+}
+
+- (void)getCharactersInfoForIds:(NSArray<NSNumber *> *)arraySearchID
+{
+	[self.networkService downloadCharactersInfoForIds:arraySearchID completionHandler:^(NSData * _Nullable data) {
+		if (!data)
+		{
+			[self.output didRecieveErrorWithDescription:@"No internet connection"];
+			return;
+		}
+		NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+		NSArray<AACharacterModel *> *characterModels = [self makeCharacterModelsFromJSON:result];
 		[self presentCharactersInfo:characterModels];
 	}];
 }
@@ -75,14 +90,12 @@
     }
 
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [self.output didLoadPageWithCharactersInfo:characters];
+        [self.output didLoadCharactersInfo:characters];
     });
 }
 
-- (NSArray<AACharacterModel *> *)makeCharacterModelsFromData:(NSData *)data
+- (NSArray<AACharacterModel *> *)makeCharacterModelsFromJSON:(NSArray *)arrayCharacterInfo
 {
-	NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-	NSArray *arrayCharacterInfo = result[@"results"];
 	NSMutableArray<AACharacterModel *> *characterModels = [NSMutableArray new];
 
 	for (NSDictionary *item in arrayCharacterInfo)

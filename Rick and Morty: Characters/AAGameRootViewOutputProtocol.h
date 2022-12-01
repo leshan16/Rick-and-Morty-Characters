@@ -1,5 +1,5 @@
 //
-//  AAGamePictureProtocol.h
+//  AAGameRootViewOutputProtocol.h
 //  Rick and Morty: Characters
 //
 //  Created by Алексей Апестин on 03.05.19.
@@ -12,13 +12,13 @@
 /**
  Протокол передачи нажатия пользователя на картинку контроллеру
  */
-@protocol AAGamePictureProtocol <NSObject>
+@protocol AAGameRootViewOutputProtocol <NSObject>
 
 /**
  Метод передает нажатие пользователя на картинку контроллеру
 
- @param picture Экземпляр картинки, на которую нажали
+ @param selectedIndex Индекс картинки, на которую нажали
  */
-- (void)pictureSelected:(nullable AAGamePicture *)picture;
+- (void)pictureSelected:(NSInteger)selectedIndex;
 
 @end

@@ -8,11 +8,8 @@
 
 #import "AAGameRootView.h"
 #import "AAGamePicture.h"
+#import "AAGameRootViewOutputProtocol.h"
 
-
-@interface AAGameRootView() <AAGamePictureProtocol>
-
-@end
 
 @implementation AAGameRootView
 
@@ -59,19 +56,27 @@
         [self addSubview:_questionLabel];
         
         AAGamePicture *leftUpPicture = [[AAGamePicture alloc] initWithFrame:[self resultFrameLeftUpPicture]];
-        leftUpPicture.output = self;
+		leftUpPicture.tag = 0;
+		UITapGestureRecognizer *tapOnLeftUpPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureSelected:)];
+		[leftUpPicture addGestureRecognizer:tapOnLeftUpPicture];
         [self addSubview:leftUpPicture];
         
         AAGamePicture *rightUpPicture = [[AAGamePicture alloc] initWithFrame:[self resultFrameRightUpPicture]];
-        rightUpPicture.output = self;
+		rightUpPicture.tag = 1;
+		UITapGestureRecognizer *tapOnRightUpPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureSelected:)];
+		[rightUpPicture addGestureRecognizer:tapOnRightUpPicture];
         [self addSubview:rightUpPicture];
         
         AAGamePicture *leftDownPicture = [[AAGamePicture alloc] initWithFrame:[self resultFrameLeftDownPicture]];
-        leftDownPicture.output = self;
+		leftDownPicture.tag = 2;
+		UITapGestureRecognizer *tapOnLeftDownPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureSelected:)];
+		[leftDownPicture addGestureRecognizer:tapOnLeftDownPicture];
         [self addSubview:leftDownPicture];
         
         AAGamePicture *rightDownPicture = [[AAGamePicture alloc] initWithFrame:[self resultFrameRightDownPicture]];
-        rightDownPicture.output = self;
+		rightDownPicture.tag = 3;
+		UITapGestureRecognizer *tapOnRightDownPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictureSelected:)];
+		[rightDownPicture addGestureRecognizer:tapOnRightDownPicture];
         [self addSubview:rightDownPicture];
         
         _arrayPictures = @[leftUpPicture, rightUpPicture, leftDownPicture, rightDownPicture];
@@ -83,7 +88,6 @@
 		_activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleLarge;
 		_activityIndicator.color = UIColor.redColor;
         [self addSubview:_activityIndicator];
-        [_activityIndicator startAnimating];
     }
     return self;
 }
@@ -119,11 +123,11 @@
 }
 
 
-#pragma mark - AAGamePictureProtocol
+#pragma mark - UIGestureRecognizer
 
-- (void)pictureSelected:(AAGamePicture *)picture
+- (void)pictureSelected:(UIGestureRecognizer *)gestureRecognizer
 {
-    [self.output pictureSelected:picture];
+    [self.output pictureSelected:gestureRecognizer.view.tag];
 }
 
 
@@ -160,7 +164,7 @@
 
 - (CGRect)resultFrameQuestionLabel
 {
-    return CGRectMake(0, CGRectGetHeight(self.frame) - CGRectGetWidth(self.frame) / 8 - 80,
+    return CGRectMake(0, CGRectGetHeight(self.frame) - CGRectGetWidth(self.frame) / 8 - self.safeAreaInsets.bottom - 10,
                       CGRectGetWidth(self.frame), CGRectGetWidth(self.frame) / 8);
 }
 

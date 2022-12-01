@@ -26,11 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didRecieveErrorWithDescription:(nullable NSString *)description;
 
 /**
- Загружена страница персонажей
+ Загружены данные персонажей
 
  @param charactersInfo Массив новых персонажей
  */
-- (void)didLoadPageWithCharactersInfo:(nullable NSArray<AACharacterModel *> *)charactersInfo;
+- (void)didLoadCharactersInfo:(nullable NSArray<AACharacterModel *> *)charactersInfo;
 
 @end
 
@@ -41,9 +41,18 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AADataRepositoryInputProtocol <NSObject>
 
 /**
- Метод получает данные из нетворк сервиса или кор даты
+ Метод получает данные страницы персонажей
+
+ @param page Номер страницы
  */
 - (void)getCharactersInfoForPage:(NSInteger)page;
+
+/**
+ Метод получает данные персонажей
+
+ @param arraySearchID Идентификаторы персонажей
+ */
+- (void)getCharactersInfoForIds:(NSArray<NSNumber *> *)arraySearchID;
 
 @end
 
