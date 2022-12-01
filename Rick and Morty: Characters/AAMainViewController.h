@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  AAMainViewController.h
 //  Rick and Morty: Characters
 //
 //  Created by Алексей Апестин on 24.04.19.
@@ -9,9 +9,9 @@
 @import UIKit;
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+/**
+ ViewController, содержащий коллекцию картинок персонажей
+ */
+@interface AAMainViewController : UIViewController
 
 @end
-

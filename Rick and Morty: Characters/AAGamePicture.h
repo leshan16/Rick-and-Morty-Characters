@@ -6,16 +6,12 @@
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "AAGamePictureProtocol.h"
+@import UIKit;
 
 
 /**
- Контейнер для картинки, который передает нажатие пользователя делегату
+ Контейнер для картинки
  */
 @interface AAGamePicture : UIImageView
-
-@property (nonatomic, nullable, weak) id<AAGamePictureProtocol> output; /**< Делегат внешних событий */
-@property(nonatomic, nullable, copy) NSString *characterName; /**< Имя персонажа*/
 
 @end

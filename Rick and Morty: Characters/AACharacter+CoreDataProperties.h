@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface AACharacter (CoreDataProperties)
 
 + (NSFetchRequest<AACharacter *> *)fetchRequest;
@@ -26,5 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t identifier;
 
 @end
+
 
 NS_ASSUME_NONNULL_END

@@ -6,11 +6,11 @@
 //  Copyright © 2019 Алексей Апестин. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 /**
- Модель персонажа аналогичная модели из кор даты, дополненная картинкой
+ Модель персонажа
  */
 @interface AACharacterModel : NSObject
 

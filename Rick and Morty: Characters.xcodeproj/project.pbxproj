@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB18CD2C227DA7B400F92C2F /* AAActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */; };
-		CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataService.m */; };
+		C7033F652937B9F20058EA45 /* AADetailTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */; };
+		C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = C74BFB1F29367FF80053DA41 /* AACoreDataService.m */; };
+		CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD3C227DEF3700F92C2F /* AADataRepository.m */; };
 		CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */; };
 		CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */; };
-		CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */; };
-		CB249B692276F01100C2C84B /* AADatabaseDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */; };
-		CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */; };
-		CB249B722277406A00C2C84B /* AAGameScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B712277406A00C2C84B /* AAGameScoreLabel.m */; };
+		CB249B602276E75F00C2C84B /* AADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B5F2276E75F00C2C84B /* AADetailViewController.m */; };
+		CB249B6C2276F02E00C2C84B /* AADetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */; };
 		CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7522774BA300C2C84B /* AAGamePicture.m */; };
-		CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */; };
-		CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */; };
+		CB52924822857EA1008A8728 /* AAGameNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */; };
 		CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB52924B2285888A008A8728 /* AAGameRootView.m */; };
 		CBB568342270C71500FF5031 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568332270C71500FF5031 /* main.m */; };
 		CBB568372270C71500FF5031 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568362270C71500FF5031 /* AppDelegate.m */; };
@@ -25,13 +23,11 @@
 		CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBB5683E2270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld */; };
 		CBB568422270C71600FF5031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB568412270C71600FF5031 /* Assets.xcassets */; };
 		CBB568452270C71600FF5031 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB568432270C71600FF5031 /* LaunchScreen.storyboard */; };
-		CBB568502270C71600FF5031 /* AAGameRandomNumbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */; };
+		CBB568502270C71600FF5031 /* AAGameNumberGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5684F2270C71600FF5031 /* AAGameNumberGeneratorTests.m */; };
 		CBB5685B2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5685A2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m */; };
-		CBB5686A2270F2B100FF5031 /* AADatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568692270F2B100FF5031 /* AADatabaseViewController.m */; };
+		CBB5686A2270F2B100FF5031 /* AAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB568692270F2B100FF5031 /* AAMainViewController.m */; };
 		CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB5686F2270F2E000FF5031 /* AAGameViewController.m */; };
-		CBD555672275D35600482512 /* AADatabaseTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555662275D35600482512 /* AADatabaseTitleLabel.m */; };
-		CBD555732275DA5E00482512 /* AADatabaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */; };
-		CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */; };
+		CBD555772275DB2200482512 /* AAMainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */; };
 		CBD5557B2275F98000482512 /* AACharacterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5557A2275F98000482512 /* AACharacterModel.m */; };
 		CBD5557F2275FC7400482512 /* AANetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5557E2275FC7400482512 /* AANetworkService.m */; };
 /* End PBXBuildFile section */
@@ -54,32 +50,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB18CD2A227DA7B400F92C2F /* AAActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAActivityIndicatorView.h; sourceTree = "<group>"; };
-		CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAActivityIndicatorView.m; sourceTree = "<group>"; };
-		CB18CD3B227DEF3700F92C2F /* AADataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataService.h; sourceTree = "<group>"; };
-		CB18CD3C227DEF3700F92C2F /* AADataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataService.m; sourceTree = "<group>"; };
-		CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADataServiceProtocol.h; sourceTree = "<group>"; };
+		C7033F62293788D70058EA45 /* AAGameNumberGeneratorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameNumberGeneratorProtocol.h; sourceTree = "<group>"; };
+		C7033F632937B9F20058EA45 /* AADetailTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADetailTableViewModel.h; sourceTree = "<group>"; };
+		C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AADetailTableViewModel.m; sourceTree = "<group>"; };
+		C74BFB1E29367FF80053DA41 /* AACoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataService.h; sourceTree = "<group>"; };
+		C74BFB1F29367FF80053DA41 /* AACoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACoreDataService.m; sourceTree = "<group>"; };
+		C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACoreDataServiceProtocol.h; sourceTree = "<group>"; };
+		CB18CD3B227DEF3700F92C2F /* AADataRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataRepository.h; sourceTree = "<group>"; };
+		CB18CD3C227DEF3700F92C2F /* AADataRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataRepository.m; sourceTree = "<group>"; };
+		CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AADataRepositoryProtocol.h; sourceTree = "<group>"; };
 		CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AACharacter+CoreDataClass.h"; sourceTree = "<group>"; };
 		CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataClass.m"; sourceTree = "<group>"; };
 		CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AACharacter+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AACharacter+CoreDataProperties.m"; sourceTree = "<group>"; };
-		CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailViewController.h; sourceTree = "<group>"; };
-		CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailViewController.m; sourceTree = "<group>"; };
-		CB249B672276F01100C2C84B /* AADatabaseDetailTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailTableView.h; sourceTree = "<group>"; };
-		CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailTableView.m; sourceTree = "<group>"; };
-		CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseDetailTableViewCell.h; sourceTree = "<group>"; };
-		CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseDetailTableViewCell.m; sourceTree = "<group>"; };
-		CB249B702277406A00C2C84B /* AAGameScoreLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameScoreLabel.h; sourceTree = "<group>"; };
-		CB249B712277406A00C2C84B /* AAGameScoreLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameScoreLabel.m; sourceTree = "<group>"; };
+		CB249B5E2276E75F00C2C84B /* AADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADetailViewController.h; sourceTree = "<group>"; };
+		CB249B5F2276E75F00C2C84B /* AADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADetailViewController.m; sourceTree = "<group>"; };
+		CB249B6A2276F02E00C2C84B /* AADetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADetailTableViewCell.h; sourceTree = "<group>"; };
+		CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADetailTableViewCell.m; sourceTree = "<group>"; };
 		CB249B7422774BA300C2C84B /* AAGamePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGamePicture.h; sourceTree = "<group>"; };
 		CB249B7522774BA300C2C84B /* AAGamePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGamePicture.m; sourceTree = "<group>"; };
-		CB249B7822774DBF00C2C84B /* AAGameQuestionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameQuestionLabel.h; sourceTree = "<group>"; };
-		CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameQuestionLabel.m; sourceTree = "<group>"; };
-		CB52924622857EA1008A8728 /* AAGameRandomNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRandomNumbers.h; sourceTree = "<group>"; };
-		CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameRandomNumbers.m; sourceTree = "<group>"; };
+		CB52924622857EA1008A8728 /* AAGameNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameNumberGenerator.h; sourceTree = "<group>"; };
+		CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameNumberGenerator.m; sourceTree = "<group>"; };
 		CB52924A2285888A008A8728 /* AAGameRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameRootView.h; sourceTree = "<group>"; };
 		CB52924B2285888A008A8728 /* AAGameRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameRootView.m; sourceTree = "<group>"; };
-		CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewProtocol.h; sourceTree = "<group>"; };
+		CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewInputProtocol.h; sourceTree = "<group>"; };
 		CB72E0B0228C7B4100DE8126 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		CBB5682F2270C71500FF5031 /* Rick and Morty: Characters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty: Characters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB568332270C71500FF5031 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,22 +85,18 @@
 		CBB568442270C71600FF5031 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBB568462270C71600FF5031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB5684B2270C71600FF5031 /* Rick and Morty: CharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick and Morty: CharactersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAGameRandomNumbersTests.m; sourceTree = "<group>"; };
+		CBB5684F2270C71600FF5031 /* AAGameNumberGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAGameNumberGeneratorTests.m; sourceTree = "<group>"; };
 		CBB568512270C71600FF5031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB568562270C71600FF5031 /* Rick and Morty: CharactersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick and Morty: CharactersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB5685A2270C71600FF5031 /* Rick_and_Morty__CharactersUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rick_and_Morty__CharactersUITests.m; sourceTree = "<group>"; };
 		CBB5685C2270C71600FF5031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBB568682270F2B100FF5031 /* AADatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseViewController.h; sourceTree = "<group>"; };
-		CBB568692270F2B100FF5031 /* AADatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseViewController.m; sourceTree = "<group>"; };
+		CBB568682270F2B100FF5031 /* AAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMainViewController.h; sourceTree = "<group>"; };
+		CBB568692270F2B100FF5031 /* AAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMainViewController.m; sourceTree = "<group>"; };
 		CBB5686E2270F2E000FF5031 /* AAGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGameViewController.h; sourceTree = "<group>"; };
 		CBB5686F2270F2E000FF5031 /* AAGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAGameViewController.m; sourceTree = "<group>"; };
-		CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGamePictureProtocol.h; sourceTree = "<group>"; };
-		CBD555652275D35600482512 /* AADatabaseTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseTitleLabel.h; sourceTree = "<group>"; };
-		CBD555662275D35600482512 /* AADatabaseTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseTitleLabel.m; sourceTree = "<group>"; };
-		CBD555712275DA5E00482512 /* AADatabaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseCollectionView.h; sourceTree = "<group>"; };
-		CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseCollectionView.m; sourceTree = "<group>"; };
-		CBD555752275DB2200482512 /* AADatabaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADatabaseCollectionViewCell.h; sourceTree = "<group>"; };
-		CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADatabaseCollectionViewCell.m; sourceTree = "<group>"; };
+		CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAGameRootViewOutputProtocol.h; sourceTree = "<group>"; };
+		CBD555752275DB2200482512 /* AAMainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMainCollectionViewCell.h; sourceTree = "<group>"; };
+		CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMainCollectionViewCell.m; sourceTree = "<group>"; };
 		CBD555792275F98000482512 /* AACharacterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACharacterModel.h; sourceTree = "<group>"; };
 		CBD5557A2275F98000482512 /* AACharacterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACharacterModel.m; sourceTree = "<group>"; };
 		CBD5557D2275FC7400482512 /* AANetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANetworkService.h; sourceTree = "<group>"; };
@@ -139,127 +129,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB18CD29227DA75000F92C2F /* ActivityIndicatorView */ = {
+		C7033F612937874B0058EA45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CB18CD2A227DA7B400F92C2F /* AAActivityIndicatorView.h */,
-				CB18CD2B227DA7B400F92C2F /* AAActivityIndicatorView.m */,
-			);
-			name = ActivityIndicatorView;
-			sourceTree = "<group>";
-		};
-		CB18CD33227DE86900F92C2F /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
+				CBD555792275F98000482512 /* AACharacterModel.h */,
+				CBD5557A2275F98000482512 /* AACharacterModel.m */,
 				CB18CD3F227E0B4400F92C2F /* AACharacter+CoreDataClass.h */,
 				CB18CD40227E0B4400F92C2F /* AACharacter+CoreDataClass.m */,
 				CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */,
 				CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */,
 			);
-			name = CoreData;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		CB18CD34227DE8CD00F92C2F /* DataService */ = {
+		CB249B5D2276E6CE00C2C84B /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				CB18CD3E227DF15200F92C2F /* AADataServiceProtocol.h */,
-				CB18CD3B227DEF3700F92C2F /* AADataService.h */,
-				CB18CD3C227DEF3700F92C2F /* AADataService.m */,
+				CB249B5E2276E75F00C2C84B /* AADetailViewController.h */,
+				CB249B5F2276E75F00C2C84B /* AADetailViewController.m */,
+				CB249B6A2276F02E00C2C84B /* AADetailTableViewCell.h */,
+				CB249B6B2276F02E00C2C84B /* AADetailTableViewCell.m */,
+				C7033F632937B9F20058EA45 /* AADetailTableViewModel.h */,
+				C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */,
 			);
-			name = DataService;
-			sourceTree = "<group>";
-		};
-		CB249B5D2276E6CE00C2C84B /* DatabaseDetailViewControllerGroup */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6E22773FE100C2C84B /* DatabaseDetailViewController */,
-				CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */,
-				CB249B652276EF7B00C2C84B /* DatabaseDetailTableView */,
-			);
-			name = DatabaseDetailViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CB249B652276EF7B00C2C84B /* DatabaseDetailTableView */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B672276F01100C2C84B /* AADatabaseDetailTableView.h */,
-				CB249B682276F01100C2C84B /* AADatabaseDetailTableView.m */,
-			);
-			name = DatabaseDetailTableView;
-			sourceTree = "<group>";
-		};
-		CB249B662276EFC200C2C84B /* DatabaseDetailTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6A2276F02E00C2C84B /* AADatabaseDetailTableViewCell.h */,
-				CB249B6B2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m */,
-			);
-			name = DatabaseDetailTableViewCell;
-			sourceTree = "<group>";
-		};
-		CB249B6D22773F8B00C2C84B /* DatabaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CBB568682270F2B100FF5031 /* AADatabaseViewController.h */,
-				CBB568692270F2B100FF5031 /* AADatabaseViewController.m */,
-			);
-			name = DatabaseViewController;
-			sourceTree = "<group>";
-		};
-		CB249B6E22773FE100C2C84B /* DatabaseDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B5E2276E75F00C2C84B /* AADatabaseDetailViewController.h */,
-				CB249B5F2276E75F00C2C84B /* AADatabaseDetailViewController.m */,
-			);
-			name = DatabaseDetailViewController;
-			sourceTree = "<group>";
-		};
-		CB249B6F2277402200C2C84B /* GameScoreLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B702277406A00C2C84B /* AAGameScoreLabel.h */,
-				CB249B712277406A00C2C84B /* AAGameScoreLabel.m */,
-			);
-			name = GameScoreLabel;
-			sourceTree = "<group>";
-		};
-		CB249B7322774B3F00C2C84B /* GamePicture */ = {
-			isa = PBXGroup;
-			children = (
-				CBCC2A19227C641B0024214C /* AAGamePictureProtocol.h */,
-				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
-				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
-			);
-			name = GamePicture;
-			sourceTree = "<group>";
-		};
-		CB249B7722774D4900C2C84B /* GameQuestionLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B7822774DBF00C2C84B /* AAGameQuestionLabel.h */,
-				CB249B7922774DBF00C2C84B /* AAGameQuestionLabel.m */,
-			);
-			name = GameQuestionLabel;
-			sourceTree = "<group>";
-		};
-		CB52924522857E58008A8728 /* GameRandomNumbers */ = {
-			isa = PBXGroup;
-			children = (
-				CB52924622857EA1008A8728 /* AAGameRandomNumbers.h */,
-				CB52924722857EA1008A8728 /* AAGameRandomNumbers.m */,
-			);
-			name = GameRandomNumbers;
-			sourceTree = "<group>";
-		};
-		CB5292492285884B008A8728 /* GameRootView */ = {
-			isa = PBXGroup;
-			children = (
-				CB52924D22858FB0008A8728 /* AAGameRootViewProtocol.h */,
-				CB52924A2285888A008A8728 /* AAGameRootView.h */,
-				CB52924B2285888A008A8728 /* AAGameRootView.m */,
-			);
-			name = GameRootView;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		CB72E0AF228C7B4000DE8126 /* Frameworks */ = {
@@ -294,13 +187,10 @@
 		CBB568312270C71500FF5031 /* Rick and Morty: Characters */ = {
 			isa = PBXGroup;
 			children = (
-				CB18CD34227DE8CD00F92C2F /* DataService */,
-				CB18CD33227DE86900F92C2F /* CoreData */,
-				CB18CD29227DA75000F92C2F /* ActivityIndicatorView */,
-				CBD555782275F94A00482512 /* CharacterModel */,
-				CBD5557C2275FC1200482512 /* NetworkService */,
-				CBD5556A2275D74400482512 /* GameTabBar */,
-				CBD555682275D6EA00482512 /* DatabaseTabBar */,
+				F8F4F87B26C6D21000A24636 /* ServiceLayer */,
+				F8F4F87A26C6D19F00A24636 /* DataLayer */,
+				F8F4F87926C6D18500A24636 /* DomainLayer */,
+				F8F4F87826C6D0E700A24636 /* PresentationLayer */,
 				CBB568352270C71500FF5031 /* AppDelegate.h */,
 				CBB568362270C71500FF5031 /* AppDelegate.m */,
 				CBB5683B2270C71600FF5031 /* Main.storyboard */,
@@ -324,7 +214,7 @@
 		CBB5684E2270C71600FF5031 /* Rick and Morty: CharactersTests */ = {
 			isa = PBXGroup;
 			children = (
-				CBB5684F2270C71600FF5031 /* AAGameRandomNumbersTests.m */,
+				CBB5684F2270C71600FF5031 /* AAGameNumberGeneratorTests.m */,
 				CBB568512270C71600FF5031 /* Info.plist */,
 			);
 			path = "Rick and Morty: CharactersTests";
@@ -339,92 +229,74 @@
 			path = "Rick and Morty: CharactersUITests";
 			sourceTree = "<group>";
 		};
-		CBD555682275D6EA00482512 /* DatabaseTabBar */ = {
+		CBD5556A2275D74400482512 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				CB249B5D2276E6CE00C2C84B /* DatabaseDetailViewControllerGroup */,
-				CBD5556B2275D76D00482512 /* DatabaseViewControllerGroup */,
-				CBD5556C2275D78800482512 /* DatabaseTitleLabel */,
-			);
-			name = DatabaseTabBar;
-			sourceTree = "<group>";
-		};
-		CBD5556A2275D74400482512 /* GameTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				CB5292492285884B008A8728 /* GameRootView */,
-				CB52924522857E58008A8728 /* GameRandomNumbers */,
-				CB249B7722774D4900C2C84B /* GameQuestionLabel */,
-				CB249B7322774B3F00C2C84B /* GamePicture */,
-				CB249B6F2277402200C2C84B /* GameScoreLabel */,
-				CBD5556E2275D7C800482512 /* GameViewController */,
-			);
-			name = GameTabBar;
-			sourceTree = "<group>";
-		};
-		CBD5556B2275D76D00482512 /* DatabaseViewControllerGroup */ = {
-			isa = PBXGroup;
-			children = (
-				CB249B6D22773F8B00C2C84B /* DatabaseViewController */,
-				CBD555702275D83E00482512 /* DatabaseCollectionViewCell */,
-				CBD5556F2275D82B00482512 /* DatabaseCollectionView */,
-			);
-			name = DatabaseViewControllerGroup;
-			sourceTree = "<group>";
-		};
-		CBD5556C2275D78800482512 /* DatabaseTitleLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CBD555652275D35600482512 /* AADatabaseTitleLabel.h */,
-				CBD555662275D35600482512 /* AADatabaseTitleLabel.m */,
-			);
-			name = DatabaseTitleLabel;
-			sourceTree = "<group>";
-		};
-		CBD5556E2275D7C800482512 /* GameViewController */ = {
-			isa = PBXGroup;
-			children = (
+				CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */,
+				CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */,
+				CB52924A2285888A008A8728 /* AAGameRootView.h */,
+				CB52924B2285888A008A8728 /* AAGameRootView.m */,
+				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
+				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
 				CBB5686E2270F2E000FF5031 /* AAGameViewController.h */,
 				CBB5686F2270F2E000FF5031 /* AAGameViewController.m */,
 			);
-			name = GameViewController;
+			name = Game;
 			sourceTree = "<group>";
 		};
-		CBD5556F2275D82B00482512 /* DatabaseCollectionView */ = {
+		CBD5556B2275D76D00482512 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CBD555712275DA5E00482512 /* AADatabaseCollectionView.h */,
-				CBD555722275DA5E00482512 /* AADatabaseCollectionView.m */,
+				CBB568682270F2B100FF5031 /* AAMainViewController.h */,
+				CBB568692270F2B100FF5031 /* AAMainViewController.m */,
+				CBD555752275DB2200482512 /* AAMainCollectionViewCell.h */,
+				CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */,
 			);
-			name = DatabaseCollectionView;
+			name = Main;
 			sourceTree = "<group>";
 		};
-		CBD555702275D83E00482512 /* DatabaseCollectionViewCell */ = {
+		F8F4F87826C6D0E700A24636 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CBD555752275DB2200482512 /* AADatabaseCollectionViewCell.h */,
-				CBD555762275DB2200482512 /* AADatabaseCollectionViewCell.m */,
+				CBD5556B2275D76D00482512 /* Main */,
+				CB249B5D2276E6CE00C2C84B /* Detail */,
+				CBD5556A2275D74400482512 /* Game */,
 			);
-			name = DatabaseCollectionViewCell;
+			name = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		CBD555782275F94A00482512 /* CharacterModel */ = {
+		F8F4F87926C6D18500A24636 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CBD555792275F98000482512 /* AACharacterModel.h */,
-				CBD5557A2275F98000482512 /* AACharacterModel.m */,
+				C7033F62293788D70058EA45 /* AAGameNumberGeneratorProtocol.h */,
+				CB52924622857EA1008A8728 /* AAGameNumberGenerator.h */,
+				CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */,
 			);
-			name = CharacterModel;
+			name = DomainLayer;
 			sourceTree = "<group>";
 		};
-		CBD5557C2275FC1200482512 /* NetworkService */ = {
+		F8F4F87A26C6D19F00A24636 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C7033F612937874B0058EA45 /* Models */,
+				CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */,
+				CB18CD3B227DEF3700F92C2F /* AADataRepository.h */,
+				CB18CD3C227DEF3700F92C2F /* AADataRepository.m */,
+			);
+			name = DataLayer;
+			sourceTree = "<group>";
+		};
+		F8F4F87B26C6D21000A24636 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
 				CBD555802275FD8B00482512 /* AANetworkServiceProtocol.h */,
 				CBD5557D2275FC7400482512 /* AANetworkService.h */,
 				CBD5557E2275FC7400482512 /* AANetworkService.m */,
+				C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */,
+				C74BFB1E29367FF80053DA41 /* AACoreDataService.h */,
+				C74BFB1F29367FF80053DA41 /* AACoreDataService.m */,
 			);
-			name = NetworkService;
+			name = ServiceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,12 +361,12 @@
 		CBB568272270C71500FF5031 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Алексей Апестин";
 				TargetAttributes = {
 					CBB5682E2270C71500FF5031 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 3ZD3MY7RUD;
+						DevelopmentTeam = QGYUUW2DD3;
 						ProvisioningStyle = Automatic;
 					};
 					CBB5684A2270C71600FF5031 = {
@@ -511,7 +383,7 @@
 			};
 			buildConfigurationList = CBB5682A2270C71500FF5031 /* Build configuration list for PBXProject "Rick and Morty: Characters" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -561,28 +433,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB249B7A22774DBF00C2C84B /* AAGameQuestionLabel.m in Sources */,
-				CBD555732275DA5E00482512 /* AADatabaseCollectionView.m in Sources */,
-				CBD555772275DB2200482512 /* AADatabaseCollectionViewCell.m in Sources */,
+				CBD555772275DB2200482512 /* AAMainCollectionViewCell.m in Sources */,
+				C74BFB2029367FF80053DA41 /* AACoreDataService.m in Sources */,
+				C7033F652937B9F20058EA45 /* AADetailTableViewModel.m in Sources */,
 				CB249B7622774BA300C2C84B /* AAGamePicture.m in Sources */,
-				CB18CD2C227DA7B400F92C2F /* AAActivityIndicatorView.m in Sources */,
 				CBB568702270F2E000FF5031 /* AAGameViewController.m in Sources */,
-				CB249B722277406A00C2C84B /* AAGameScoreLabel.m in Sources */,
-				CB249B692276F01100C2C84B /* AADatabaseDetailTableView.m in Sources */,
-				CB52924822857EA1008A8728 /* AAGameRandomNumbers.m in Sources */,
-				CBB5686A2270F2B100FF5031 /* AADatabaseViewController.m in Sources */,
+				CB52924822857EA1008A8728 /* AAGameNumberGenerator.m in Sources */,
+				CBB5686A2270F2B100FF5031 /* AAMainViewController.m in Sources */,
 				CBD5557F2275FC7400482512 /* AANetworkService.m in Sources */,
 				CBB568372270C71500FF5031 /* AppDelegate.m in Sources */,
 				CBD5557B2275F98000482512 /* AACharacterModel.m in Sources */,
-				CB249B6C2276F02E00C2C84B /* AADatabaseDetailTableViewCell.m in Sources */,
-				CB18CD3D227DEF3700F92C2F /* AADataService.m in Sources */,
+				CB249B6C2276F02E00C2C84B /* AADetailTableViewCell.m in Sources */,
+				CB18CD3D227DEF3700F92C2F /* AADataRepository.m in Sources */,
 				CB52924C2285888A008A8728 /* AAGameRootView.m in Sources */,
-				CBD555672275D35600482512 /* AADatabaseTitleLabel.m in Sources */,
 				CB18CD43227E0B4400F92C2F /* AACharacter+CoreDataClass.m in Sources */,
 				CB18CD44227E0B4400F92C2F /* AACharacter+CoreDataProperties.m in Sources */,
 				CBB568402270C71600FF5031 /* Rick_and_Morty__Characters.xcdatamodeld in Sources */,
 				CBB568342270C71500FF5031 /* main.m in Sources */,
-				CB249B602276E75F00C2C84B /* AADatabaseDetailViewController.m in Sources */,
+				CB249B602276E75F00C2C84B /* AADetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB568502270C71600FF5031 /* AAGameRandomNumbersTests.m in Sources */,
+				CBB568502270C71600FF5031 /* AAGameNumberGeneratorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,20 +509,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -677,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -689,20 +567,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -719,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -731,13 +619,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ZD3MY7RUD;
+				DEVELOPMENT_TEAM = QGYUUW2DD3;
 				INFOPLIST_FILE = "Rick and Morty: Characters/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--Characters";
+				PRODUCT_BUNDLE_IDENTIFIER = "Rick-and-Morty--Characters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -745,13 +633,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3ZD3MY7RUD;
+				DEVELOPMENT_TEAM = QGYUUW2DD3;
 				INFOPLIST_FILE = "Rick and Morty: Characters/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "trgfg657.Rick-and-Morty--Characters";
+				PRODUCT_BUNDLE_IDENTIFIER = "Rick-and-Morty--Characters";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
