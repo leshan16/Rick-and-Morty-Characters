@@ -34,7 +34,7 @@
 	tabBarViewController.tabBar.translucent = YES;
 	tabBarViewController.tabBar.itemPositioning = UITabBarItemPositioningFill;
 	tabBarViewController.tabBar.tintColor = [UIColor colorWithRed:0.5 green:0 blue:0 alpha:1];
-	tabBarViewController.tabBar.barTintColor = [UIColor colorWithRed:0 green:0.5 blue:0 alpha:1];
+	tabBarViewController.tabBar.barTintColor = [UIColor systemGray6Color];
 	tabBarViewController.tabBar.unselectedItemTintColor = UIColor.blackColor;
 	tabBarViewController.viewControllers = @[navigationController, gameViewController];;
 
