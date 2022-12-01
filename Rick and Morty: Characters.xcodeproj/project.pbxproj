@@ -129,7 +129,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C7033F612937874B0058EA45 /* Models */ = {
+		C7C4AA07293907B300B7227C /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CBD555802275FD8B00482512 /* AANetworkServiceProtocol.h */,
+				CBD5557D2275FC7400482512 /* AANetworkService.h */,
+				CBD5557E2275FC7400482512 /* AANetworkService.m */,
+				C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */,
+				C74BFB1E29367FF80053DA41 /* AACoreDataService.h */,
+				C74BFB1F29367FF80053DA41 /* AACoreDataService.m */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		C7C4AA08293907CF00B7227C /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C7C4AA09293907DA00B7227C /* Models */,
+				CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */,
+				CB18CD3B227DEF3700F92C2F /* AADataRepository.h */,
+				CB18CD3C227DEF3700F92C2F /* AADataRepository.m */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		C7C4AA09293907DA00B7227C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CBD555792275F98000482512 /* AACharacterModel.h */,
@@ -139,10 +163,41 @@
 				CB18CD41227E0B4400F92C2F /* AACharacter+CoreDataProperties.h */,
 				CB18CD42227E0B4400F92C2F /* AACharacter+CoreDataProperties.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		CB249B5D2276E6CE00C2C84B /* Detail */ = {
+		C7C4AA0A293907FC00B7227C /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C7033F62293788D70058EA45 /* AAGameNumberGeneratorProtocol.h */,
+				CB52924622857EA1008A8728 /* AAGameNumberGenerator.h */,
+				CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		C7C4AA0B2939081800B7227C /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C7C4AA0C2939081E00B7227C /* Main */,
+				C7C4AA0D2939082300B7227C /* Detail */,
+				C7C4AA0E2939082B00B7227C /* Game */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		C7C4AA0C2939081E00B7227C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CBB568682270F2B100FF5031 /* AAMainViewController.h */,
+				CBB568692270F2B100FF5031 /* AAMainViewController.m */,
+				CBD555752275DB2200482512 /* AAMainCollectionViewCell.h */,
+				CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C7C4AA0D2939082300B7227C /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				CB249B5E2276E75F00C2C84B /* AADetailViewController.h */,
@@ -152,7 +207,22 @@
 				C7033F632937B9F20058EA45 /* AADetailTableViewModel.h */,
 				C7033F642937B9F20058EA45 /* AADetailTableViewModel.m */,
 			);
-			name = Detail;
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C7C4AA0E2939082B00B7227C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */,
+				CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */,
+				CB52924A2285888A008A8728 /* AAGameRootView.h */,
+				CB52924B2285888A008A8728 /* AAGameRootView.m */,
+				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
+				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
+				CBB5686E2270F2E000FF5031 /* AAGameViewController.h */,
+				CBB5686F2270F2E000FF5031 /* AAGameViewController.m */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		CB72E0AF228C7B4000DE8126 /* Frameworks */ = {
@@ -187,10 +257,10 @@
 		CBB568312270C71500FF5031 /* Rick and Morty: Characters */ = {
 			isa = PBXGroup;
 			children = (
-				F8F4F87B26C6D21000A24636 /* ServiceLayer */,
-				F8F4F87A26C6D19F00A24636 /* DataLayer */,
-				F8F4F87926C6D18500A24636 /* DomainLayer */,
-				F8F4F87826C6D0E700A24636 /* PresentationLayer */,
+				C7C4AA07293907B300B7227C /* ServiceLayer */,
+				C7C4AA08293907CF00B7227C /* DataLayer */,
+				C7C4AA0A293907FC00B7227C /* DomainLayer */,
+				C7C4AA0B2939081800B7227C /* PresentationLayer */,
 				CBB568352270C71500FF5031 /* AppDelegate.h */,
 				CBB568362270C71500FF5031 /* AppDelegate.m */,
 				CBB5683B2270C71600FF5031 /* Main.storyboard */,
@@ -227,76 +297,6 @@
 				CBB5685C2270C71600FF5031 /* Info.plist */,
 			);
 			path = "Rick and Morty: CharactersUITests";
-			sourceTree = "<group>";
-		};
-		CBD5556A2275D74400482512 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				CB52924D22858FB0008A8728 /* AAGameRootViewInputProtocol.h */,
-				CBCC2A19227C641B0024214C /* AAGameRootViewOutputProtocol.h */,
-				CB52924A2285888A008A8728 /* AAGameRootView.h */,
-				CB52924B2285888A008A8728 /* AAGameRootView.m */,
-				CB249B7422774BA300C2C84B /* AAGamePicture.h */,
-				CB249B7522774BA300C2C84B /* AAGamePicture.m */,
-				CBB5686E2270F2E000FF5031 /* AAGameViewController.h */,
-				CBB5686F2270F2E000FF5031 /* AAGameViewController.m */,
-			);
-			name = Game;
-			sourceTree = "<group>";
-		};
-		CBD5556B2275D76D00482512 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				CBB568682270F2B100FF5031 /* AAMainViewController.h */,
-				CBB568692270F2B100FF5031 /* AAMainViewController.m */,
-				CBD555752275DB2200482512 /* AAMainCollectionViewCell.h */,
-				CBD555762275DB2200482512 /* AAMainCollectionViewCell.m */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
-		F8F4F87826C6D0E700A24636 /* PresentationLayer */ = {
-			isa = PBXGroup;
-			children = (
-				CBD5556B2275D76D00482512 /* Main */,
-				CB249B5D2276E6CE00C2C84B /* Detail */,
-				CBD5556A2275D74400482512 /* Game */,
-			);
-			name = PresentationLayer;
-			sourceTree = "<group>";
-		};
-		F8F4F87926C6D18500A24636 /* DomainLayer */ = {
-			isa = PBXGroup;
-			children = (
-				C7033F62293788D70058EA45 /* AAGameNumberGeneratorProtocol.h */,
-				CB52924622857EA1008A8728 /* AAGameNumberGenerator.h */,
-				CB52924722857EA1008A8728 /* AAGameNumberGenerator.m */,
-			);
-			name = DomainLayer;
-			sourceTree = "<group>";
-		};
-		F8F4F87A26C6D19F00A24636 /* DataLayer */ = {
-			isa = PBXGroup;
-			children = (
-				C7033F612937874B0058EA45 /* Models */,
-				CB18CD3E227DF15200F92C2F /* AADataRepositoryProtocol.h */,
-				CB18CD3B227DEF3700F92C2F /* AADataRepository.h */,
-				CB18CD3C227DEF3700F92C2F /* AADataRepository.m */,
-			);
-			name = DataLayer;
-			sourceTree = "<group>";
-		};
-		F8F4F87B26C6D21000A24636 /* ServiceLayer */ = {
-			isa = PBXGroup;
-			children = (
-				CBD555802275FD8B00482512 /* AANetworkServiceProtocol.h */,
-				CBD5557D2275FC7400482512 /* AANetworkService.h */,
-				CBD5557E2275FC7400482512 /* AANetworkService.m */,
-				C74BFB212936800F0053DA41 /* AACoreDataServiceProtocol.h */,
-				C74BFB1E29367FF80053DA41 /* AACoreDataService.h */,
-				C74BFB1F29367FF80053DA41 /* AACoreDataService.m */,
-			);
-			name = ServiceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
